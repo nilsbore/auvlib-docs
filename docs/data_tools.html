@@ -160,6 +160,26 @@
             
   <div class="section" id="data-tools">
 <h1>data_tools<a class="headerlink" href="#data-tools" title="Permalink to this headline">¶</a></h1>
+<p>Data structures for parsing and storing different
+kinds of maritime data, and to convert them into
+common std_data data structures.</p>
+<p>The code below shows a simple example of reading
+a folder of gsf files, converting them into the
+standard multibeam format, and saving the produced
+bathymetric map as an image.</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">auvlib.data_tools</span> <span class="k">import</span> <span class="n">std_data</span><span class="p">,</span> <span class="n">gsf_data</span>
+<span class="kn">from</span> <span class="nn">auvlib.bathy_maps</span> <span class="k">import</span> <span class="n">draw_map</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">gsf_pings</span> <span class="o">=</span> <span class="n">gsf_data</span><span class="o">.</span><span class="n">gsf_mbes_ping</span><span class="o">.</span><span class="n">parse_folder</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># parse folder of gsf data</span>
+<span class="n">mbes_pings</span> <span class="o">=</span> <span class="n">gsf_data</span><span class="o">.</span><span class="n">convert_pings</span><span class="p">(</span><span class="n">gsf_pings</span><span class="p">)</span> <span class="c1"># convert to std_data pings</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">draw_map</span><span class="o">.</span><span class="n">BathyMapImage</span><span class="p">(</span><span class="n">mbes_pings</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="c1"># create a bathymetry height map</span>
+<span class="n">d</span><span class="o">.</span><span class="n">draw_height_map</span><span class="p">(</span><span class="n">mbes_pings</span><span class="p">)</span> <span class="c1"># draw the height map</span>
+<span class="n">d</span><span class="o">.</span><span class="n">draw_track</span><span class="p">(</span><span class="n">mbes_pings</span><span class="p">)</span> <span class="c1"># draw the track of the vehicle</span>
+<span class="n">d</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;height_map.png&quot;</span><span class="p">)</span> <span class="c1"># save the height map to &quot;height_map.png&quot;</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="std_data.html">std_data</a></li>

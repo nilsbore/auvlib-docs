@@ -156,6 +156,33 @@
             
   <div class="section" id="sonar-tracing">
 <h1>sonar_tracing<a class="headerlink" href="#sonar-tracing" title="Permalink to this headline">¶</a></h1>
+<p>Methods for ray tracing through water layers with
+different sound speeds. See example below.</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">auvlib.sonar_tracing</span> <span class="k">import</span> <span class="n">snell_ray_tracing</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># end points of rays in sensor&#39;s coordinate system</span>
+<span class="n">end_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">3.</span><span class="p">,</span> <span class="o">-</span><span class="mf">40.1</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">13.</span><span class="p">,</span> <span class="o">-</span><span class="mf">40.1</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">23.</span><span class="p">,</span> <span class="o">-</span><span class="mf">40.1</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">33.</span><span class="p">,</span> <span class="o">-</span><span class="mf">40.1</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">43.</span><span class="p">,</span> <span class="o">-</span><span class="mf">32.1</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">53.</span><span class="p">,</span> <span class="o">-</span><span class="mf">22.1</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">63.</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.1</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">73.</span><span class="p">,</span> <span class="o">-</span><span class="mf">22.1</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">83.</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.1</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">93.</span><span class="p">,</span> <span class="o">-</span><span class="mf">40.1</span><span class="p">]])</span>
+
+<span class="c1"># sound speeds in every layer</span>
+<span class="n">layer_speeds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">])</span>
+<span class="c1"># depth of layers</span>
+<span class="n">layer_depths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="o">-</span><span class="mf">20.</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.</span><span class="p">])</span>
+
+<span class="n">end_times</span><span class="p">,</span> <span class="n">layer_widths</span> <span class="o">=</span> <span class="n">snell_ray_tracing</span><span class="o">.</span><span class="n">trace_multiple_layers</span><span class="p">(</span><span class="n">layer_depths</span><span class="p">,</span> <span class="n">layer_speeds</span><span class="p">,</span> <span class="n">end_points</span><span class="p">)</span>
+
+<span class="n">snell_ray_tracing</span><span class="o">.</span><span class="n">visualize_rays</span><span class="p">(</span><span class="n">end_points</span><span class="p">,</span> <span class="n">layer_depths</span><span class="p">,</span> <span class="n">layer_widths</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="snell_ray_tracing.html">snell_ray_tracing</a></li>

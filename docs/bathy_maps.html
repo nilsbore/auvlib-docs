@@ -159,6 +159,35 @@
             
   <div class="section" id="bathy-maps">
 <h1>bathy_maps<a class="headerlink" href="#bathy-maps" title="Permalink to this headline">¶</a></h1>
+<p>Methods for fusing and registering bathymetric data.</p>
+<p>The example below shows how to read multibeam and
+sidescan data, and drape the sidescan pings on top
+of the bathymetric map.</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">auvlib.data_tools</span> <span class="k">import</span> <span class="n">std_data</span><span class="p">,</span> <span class="n">gsf_data</span><span class="p">,</span> <span class="n">xtf_data</span><span class="p">,</span> <span class="n">csv_data</span><span class="p">,</span> <span class="n">utils</span>
+<span class="kn">from</span> <span class="nn">auvlib.bathy_maps</span> <span class="k">import</span> <span class="n">mesh_map</span><span class="p">,</span> <span class="n">patch_draper</span><span class="p">,</span> <span class="n">data_vis</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">sensor_yaw</span> <span class="o">=</span> <span class="mf">5.</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span> <span class="c1"># rotation of sidescan wrt nav frame</span>
+<span class="n">sensor_offset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span> <span class="c1"># translation of sidescan wrt nav frame</span>
+
+<span class="n">gsf_pings</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">parse_or_load_gsf</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># parse_or_load* functions will just parse the first time</span>
+<span class="n">mbes_pings</span> <span class="o">=</span> <span class="n">gsf_data</span><span class="o">.</span><span class="n">convert_pings</span><span class="p">(</span><span class="n">gsf_pings</span><span class="p">)</span> <span class="c1"># convert to std_data pings</span>
+<span class="n">V</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">bounds</span> <span class="o">=</span> <span class="n">mesh_map</span><span class="o">.</span><span class="n">mesh_from_pings</span><span class="p">(</span><span class="n">mbes_pings</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># generate a bathymetry mesh</span>
+
+<span class="n">xtf_pings</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">parse_or_load_xtf</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># load sidescan pings</span>
+<span class="n">nav_entries</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">parse_or_load_csv</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># load gps nav entries</span>
+<span class="n">xtf_pings</span> <span class="o">=</span> <span class="n">csv_data</span><span class="o">.</span><span class="n">convert_matched_entries</span><span class="p">(</span><span class="n">xtf_pings</span><span class="p">,</span> <span class="n">nav_entries</span><span class="p">)</span> <span class="c1"># match sidescan with gps</span>
+<span class="n">xtf_pings</span> <span class="o">=</span> <span class="n">xtf_data</span><span class="o">.</span><span class="n">correct_sensor_offset</span><span class="p">(</span><span class="n">xtf_pings</span><span class="p">,</span> <span class="n">sensor_offset</span><span class="p">)</span> <span class="c1"># correct for sidescan translation</span>
+<span class="n">sound_speeds</span> <span class="o">=</span> <span class="n">csv_data</span><span class="o">.</span><span class="n">csv_asvp_sound_speed</span><span class="o">.</span><span class="n">parse_file</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="c1"># parse sound speed file</span>
+
+<span class="n">viewer</span> <span class="o">=</span> <span class="n">patch_draper</span><span class="o">.</span><span class="n">PatchDraper</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">xtf_pings</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">sound_speeds</span><span class="p">)</span> <span class="c1"># create a draper object</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">set_sidescan_yaw</span><span class="p">(</span><span class="n">sensor_yaw</span><span class="p">)</span> <span class="c1"># set the rotation of sensor wrt nav frame</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">set_vehicle_mesh</span><span class="p">(</span><span class="o">*</span><span class="n">patch_draper</span><span class="o">.</span><span class="n">get_vehicle_mesh</span><span class="p">())</span> <span class="c1"># add a vehicle model for visualization</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">set_patch_callback</span><span class="p">(</span><span class="k">lambda</span> <span class="n">patch</span><span class="p">:</span> <span class="n">data_vis</span><span class="o">.</span><span class="n">plot_patch_views</span><span class="p">([</span><span class="n">patch</span><span class="p">]))</span> <span class="c1"># add a plotter callback</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># show the visualization and drape</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="draw_map.html">draw_map</a></li>
