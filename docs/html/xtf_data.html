@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>xtf_data &mdash; auvlib 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="csv_data" href="csv_data.html" />
+    <link rel="prev" title="all_data" href="all_data.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> auvlib
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="auvlib.html">auvlib</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="data_tools.html">data_tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="std_data.html">std_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gsf_data.html">gsf_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="all_data.html">all_data</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">xtf_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csv_data.html">csv_data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bathy_maps.html">bathy_maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sonar_tracing.html">sonar_tracing</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">auvlib</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="auvlib.html">auvlib</a> &raquo;</li>
+        
+          <li><a href="data_tools.html">data_tools</a> &raquo;</li>
+        
+      <li>xtf_data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/xtf_data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-auvlib.data_tools.xtf_data">
+<span id="xtf-data"></span><h1>xtf_data<a class="headerlink" href="#module-auvlib.data_tools.xtf_data" title="Permalink to this headline">¶</a></h1>
+<p>Basic utilities for working with the xtf file format</p>
+<dl class="function">
+<dt id="auvlib.data_tools.xtf_data.correct_sensor_offset">
+<code class="descclassname">auvlib.data_tools.xtf_data.</code><code class="descname">correct_sensor_offset</code><span class="sig-paren">(</span><em>arg0: List[auvlib.data_tools.xtf_data.xtf_sss_ping], arg1: numpy.ndarray[float64[3, 1]]</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.xtf_data.xtf_sss_ping]<a class="headerlink" href="#auvlib.data_tools.xtf_data.correct_sensor_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the sensor onboard the vehicle with a given translation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.data_tools.xtf_data.make_waterfall_image">
+<code class="descclassname">auvlib.data_tools.xtf_data.</code><code class="descname">make_waterfall_image</code><span class="sig-paren">(</span><em>arg0: List[auvlib.data_tools.xtf_data.xtf_sss_ping]</em><span class="sig-paren">)</span> &#x2192; cv::Mat<a class="headerlink" href="#auvlib.data_tools.xtf_data.make_waterfall_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an opencv waterfall image from xtf_sss_ping::PingsT</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.data_tools.xtf_data.write_data">
+<code class="descclassname">auvlib.data_tools.xtf_data.</code><code class="descname">write_data</code><span class="sig-paren">(</span><em>arg0: List[auvlib.data_tools.xtf_data.xtf_sss_ping], arg1: unicode</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.data_tools.xtf_data.write_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write xtf pings to .cereal file</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.xtf_data.</code><code class="descname">xtf_sss_ping</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for xtf sidescan type</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.first_in_file_">
+<code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.first_in_file_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.heading_">
+<code class="descname">heading_</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.heading_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.lat_">
+<code class="descname">lat_</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.lat_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.long_">
+<code class="descname">long_</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.long_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.parse_file">
+<code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.xtf_data.xtf_sss_ping]<a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.parse_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse xtf_sss_ping from .xtf file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.parse_folder">
+<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.xtf_data.xtf_sss_ping]<a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.parse_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse xtf_sss_ping from folder of .xtf files</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.pitch_">
+<code class="descname">pitch_</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.pitch_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.port">
+<code class="descname">port</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.pos_">
+<code class="descname">pos_</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.pos_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.read_data">
+<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.xtf_data.xtf_sss_ping]<a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read xtf_sss_ping::PingsT from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.roll_">
+<code class="descname">roll_</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.roll_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.sound_vel_">
+<code class="descname">sound_vel_</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.sound_vel_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.stbd">
+<code class="descname">stbd</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.stbd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.time_stamp_">
+<code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.time_stamp_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping.time_string_">
+<code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping.time_string_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping_side">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.xtf_data.</code><code class="descname">xtf_sss_ping_side</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping_side" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for one xtf sidescan side</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping_side.beam_width">
+<code class="descname">beam_width</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping_side.beam_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping_side.pings">
+<code class="descname">pings</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping_side.pings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping_side.slant_range">
+<code class="descname">slant_range</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping_side.slant_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping_side.tilt_angle">
+<code class="descname">tilt_angle</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping_side.tilt_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.xtf_data.xtf_sss_ping_side.time_duration">
+<code class="descname">time_duration</code><a class="headerlink" href="#auvlib.data_tools.xtf_data.xtf_sss_ping_side.time_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="csv_data.html" class="btn btn-neutral float-right" title="csv_data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="all_data.html" class="btn btn-neutral" title="all_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nils Bore
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

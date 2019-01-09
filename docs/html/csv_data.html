@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>csv_data &mdash; auvlib 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="bathy_maps" href="bathy_maps.html" />
+    <link rel="prev" title="xtf_data" href="xtf_data.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> auvlib
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="auvlib.html">auvlib</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="data_tools.html">data_tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="std_data.html">std_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gsf_data.html">gsf_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="all_data.html">all_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xtf_data.html">xtf_data</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">csv_data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bathy_maps.html">bathy_maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sonar_tracing.html">sonar_tracing</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">auvlib</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="auvlib.html">auvlib</a> &raquo;</li>
+        
+          <li><a href="data_tools.html">data_tools</a> &raquo;</li>
+        
+      <li>csv_data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/csv_data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-auvlib.data_tools.csv_data">
+<span id="csv-data"></span><h1>csv_data<a class="headerlink" href="#module-auvlib.data_tools.csv_data" title="Permalink to this headline">¶</a></h1>
+<p>Basic utilities for working with csv based data</p>
+<dl class="function">
+<dt id="auvlib.data_tools.csv_data.convert_matched_entries">
+<code class="descclassname">auvlib.data_tools.csv_data.</code><code class="descname">convert_matched_entries</code><span class="sig-paren">(</span><em>arg0: List[xtf_data::xtf_sss_ping], arg1: List[auvlib.data_tools.csv_data.csv_nav_entry]</em><span class="sig-paren">)</span> &#x2192; List[xtf_data::xtf_sss_ping]<a class="headerlink" href="#auvlib.data_tools.csv_data.convert_matched_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Match xtf_sss_ping::PingsT and csv_nav_entry::EntriesT and assign pos info to pings</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.data_tools.csv_data.csv_asvp_sound_speed">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.csv_data.</code><code class="descname">csv_asvp_sound_speed</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_asvp_sound_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for a csv based nav entry</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_asvp_sound_speed.dbars">
+<code class="descname">dbars</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_asvp_sound_speed.dbars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_asvp_sound_speed.lat_">
+<code class="descname">lat_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_asvp_sound_speed.lat_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_asvp_sound_speed.long_">
+<code class="descname">long_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_asvp_sound_speed.long_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.csv_data.csv_asvp_sound_speed.parse_file">
+<code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.csv_data.csv_asvp_sound_speed]<a class="headerlink" href="#auvlib.data_tools.csv_data.csv_asvp_sound_speed.parse_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse csv_asvp_sound_speed from .csv file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.csv_data.csv_asvp_sound_speed.parse_folder">
+<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.csv_data.csv_asvp_sound_speed]<a class="headerlink" href="#auvlib.data_tools.csv_data.csv_asvp_sound_speed.parse_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse csv_asvp_sound_speed from folder of .csv files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.csv_data.csv_asvp_sound_speed.read_data">
+<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.csv_data.csv_asvp_sound_speed]<a class="headerlink" href="#auvlib.data_tools.csv_data.csv_asvp_sound_speed.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read csv_asvp_sound_speed::EntriesT from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_asvp_sound_speed.time_stamp_">
+<code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_asvp_sound_speed.time_stamp_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_asvp_sound_speed.time_string_">
+<code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_asvp_sound_speed.time_string_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_asvp_sound_speed.vels">
+<code class="descname">vels</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_asvp_sound_speed.vels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.csv_data.</code><code class="descname">csv_nav_entry</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for a csv based nav entry</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.altitude">
+<code class="descname">altitude</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.altitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.heading_">
+<code class="descname">heading_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.heading_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.heading_std_">
+<code class="descname">heading_std_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.heading_std_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.lat_">
+<code class="descname">lat_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.lat_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.long_">
+<code class="descname">long_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.long_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.parse_file">
+<code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.csv_data.csv_nav_entry]<a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.parse_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse csv_nav_entry from .csv file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.parse_folder">
+<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.csv_data.csv_nav_entry]<a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.parse_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse csv_nav_entry from folder of .csv files</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.pitch_">
+<code class="descname">pitch_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.pitch_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.pitch_std_">
+<code class="descname">pitch_std_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.pitch_std_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.pos_">
+<code class="descname">pos_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.pos_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.read_data">
+<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.csv_data.csv_nav_entry]<a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read csv_nav_entry::EntriesT from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.roll_">
+<code class="descname">roll_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.roll_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.roll_std_">
+<code class="descname">roll_std_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.roll_std_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.time_stamp_">
+<code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.time_stamp_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.time_string_">
+<code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.time_string_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.csv_data.csv_nav_entry.vel_">
+<code class="descname">vel_</code><a class="headerlink" href="#auvlib.data_tools.csv_data.csv_nav_entry.vel_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.data_tools.csv_data.write_data">
+<code class="descclassname">auvlib.data_tools.csv_data.</code><code class="descname">write_data</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#auvlib.data_tools.csv_data.write_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li>write_data(arg0: List[auvlib.data_tools.csv_data.csv_nav_entry], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write csv_nav_entry::EntriesT to .cereal file</p>
+<ol class="arabic simple" start="2">
+<li>write_data(arg0: List[auvlib.data_tools.csv_data.csv_asvp_sound_speed], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write csv_asvp_sound_speed::EntriesT to .cereal file</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bathy_maps.html" class="btn btn-neutral float-right" title="bathy_maps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="xtf_data.html" class="btn btn-neutral" title="xtf_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nils Bore
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

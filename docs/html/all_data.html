@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>all_data &mdash; auvlib 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="xtf_data" href="xtf_data.html" />
+    <link rel="prev" title="gsf_data" href="gsf_data.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> auvlib
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="auvlib.html">auvlib</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="data_tools.html">data_tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="std_data.html">std_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gsf_data.html">gsf_data</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">all_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xtf_data.html">xtf_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csv_data.html">csv_data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bathy_maps.html">bathy_maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sonar_tracing.html">sonar_tracing</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">auvlib</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="auvlib.html">auvlib</a> &raquo;</li>
+        
+          <li><a href="data_tools.html">data_tools</a> &raquo;</li>
+        
+      <li>all_data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/all_data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-auvlib.data_tools.all_data">
+<span id="all-data"></span><h1>all_data<a class="headerlink" href="#module-auvlib.data_tools.all_data" title="Permalink to this headline">¶</a></h1>
+<p>Basic utilities for working with the .all file format</p>
+<dl class="class">
+<dt id="auvlib.data_tools.all_data.all_echosounder_depth">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.all_data.</code><code class="descname">all_echosounder_depth</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for the all single-beam echosounder depth</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_echosounder_depth.depth_">
+<code class="descname">depth_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.depth_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_echosounder_depth.first_in_file_">
+<code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.first_in_file_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_echosounder_depth.id_">
+<code class="descname">id_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.id_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_echosounder_depth.parse_file">
+<code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_echosounder_depth]<a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.parse_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse all_echosounder_depth from .all file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_echosounder_depth.parse_folder">
+<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_echosounder_depth]<a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.parse_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse all_echosounder_depth from folder of .all files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_echosounder_depth.read_data">
+<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_echosounder_depth]<a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read all_echosounder_depth::EntriesT from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_echosounder_depth.time_stamp_">
+<code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.time_stamp_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_echosounder_depth.time_string_">
+<code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.time_string_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.all_data.</code><code class="descname">all_mbes_ping</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for the all multibeam type</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.beams">
+<code class="descname">beams</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.beams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.first_in_file_">
+<code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.first_in_file_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.heading_">
+<code class="descname">heading_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.heading_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.id_">
+<code class="descname">id_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.id_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.parse_file">
+<code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_mbes_ping]<a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.parse_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse all_mbes_ping from .all file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.parse_folder">
+<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_mbes_ping]<a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.parse_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse all_mbes_ping from folder of .all files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.read_data">
+<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_mbes_ping]<a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read all_mbes_ping::PingsT from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.reflectivities">
+<code class="descname">reflectivities</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.reflectivities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.sound_vel_">
+<code class="descname">sound_vel_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.sound_vel_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.time_stamp_">
+<code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.time_stamp_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.time_string_">
+<code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.time_string_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_mbes_ping.transducer_depth_">
+<code class="descname">transducer_depth_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.transducer_depth_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.data_tools.all_data.all_nav_depth">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.all_data.</code><code class="descname">all_nav_depth</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for the all nav depth entry</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_depth.first_in_file_">
+<code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.first_in_file_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_depth.height">
+<code class="descname">height</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_depth.height_type">
+<code class="descname">height_type</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.height_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_depth.id_">
+<code class="descname">id_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.id_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_nav_depth.parse_file">
+<code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_nav_depth]<a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.parse_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse all_nav_depth from .all file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_nav_depth.parse_folder">
+<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_nav_depth]<a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.parse_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse all_nav_depth from folder of .all files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_nav_depth.read_data">
+<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_nav_depth]<a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read all_nav_depth::EntriesT from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_depth.time_stamp_">
+<code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.time_stamp_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_depth.time_string_">
+<code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.time_string_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.data_tools.all_data.all_nav_entry">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.all_data.</code><code class="descname">all_nav_entry</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for the all nav entry</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.course_over_ground_">
+<code class="descname">course_over_ground_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.course_over_ground_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.depth_">
+<code class="descname">depth_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.depth_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.first_in_file_">
+<code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.first_in_file_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.heading_">
+<code class="descname">heading_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.heading_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.id_">
+<code class="descname">id_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.id_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.lat_">
+<code class="descname">lat_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.lat_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.long_">
+<code class="descname">long_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.long_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.parse_file">
+<code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_nav_entry]<a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.parse_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse all_nav_entry from .all file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.parse_folder">
+<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_nav_entry]<a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.parse_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse all_nav_entry from folder of .all files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.read_data">
+<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.all_data.all_nav_entry]<a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read all_nav_entry::EntriesT from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.time_stamp_">
+<code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.time_stamp_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.all_data.all_nav_entry.time_string_">
+<code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.time_string_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.data_tools.all_data.convert_matched_entries">
+<code class="descclassname">auvlib.data_tools.all_data.</code><code class="descname">convert_matched_entries</code><span class="sig-paren">(</span><em>arg0: List[auvlib.data_tools.all_data.all_mbes_ping], arg1: List[auvlib.data_tools.all_data.all_nav_entry]</em><span class="sig-paren">)</span> &#x2192; List[std_data::mbes_ping]<a class="headerlink" href="#auvlib.data_tools.all_data.convert_matched_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matches xtf_sss_ping::PingsT and csv_nav_entry::EntriesT and assign pos data to pings</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.data_tools.all_data.write_data">
+<code class="descclassname">auvlib.data_tools.all_data.</code><code class="descname">write_data</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#auvlib.data_tools.all_data.write_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li>write_data(arg0: List[auvlib.data_tools.all_data.all_mbes_ping], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write all_mbes_ping::PingsT to .cereal file</p>
+<ol class="arabic simple" start="2">
+<li>write_data(arg0: List[auvlib.data_tools.all_data.all_nav_entry], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write all_nav_entry::EntriesT to .cereal file</p>
+<ol class="arabic simple" start="3">
+<li>write_data(arg0: List[auvlib.data_tools.all_data.all_nav_depth], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write all_nav_depth::EntriesT to .cereal file</p>
+<ol class="arabic simple" start="4">
+<li>write_data(arg0: List[auvlib.data_tools.all_data.all_echosounder_depth], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write all_echosounder_depth::EntriesT to .cereal file</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="xtf_data.html" class="btn btn-neutral float-right" title="xtf_data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gsf_data.html" class="btn btn-neutral" title="gsf_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nils Bore
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
