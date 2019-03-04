@@ -86,6 +86,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">mesh_map</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patch_draper.html">patch_draper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="map_draper.html">map_draper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sss_gen_sim.html">sss_gen_sim</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sonar_tracing.html">sonar_tracing</a></li>
@@ -163,9 +164,27 @@
 <span id="mesh-map"></span><h1>mesh_map<a class="headerlink" href="#module-auvlib.bathy_maps.mesh_map" title="Permalink to this headline">¶</a></h1>
 <p>Data structure for constructing and viewing a bathymetry mesh and for draping the mesh with sidescan data</p>
 <dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.height_map_from_cloud">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">height_map_from_cloud</code><span class="sig-paren">(</span><em>arg0: List[numpy.ndarray[float64[3, 1]]], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.height_map_from_cloud" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct height map from vector&lt;Eigen::Vector3d&gt;</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="auvlib.bathy_maps.mesh_map.height_map_from_pings">
-<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">height_map_from_pings</code><span class="sig-paren">(</span><em>arg0: List[auvlib.data_tools.std_data.mbes_ping], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.height_map_from_pings" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">height_map_from_pings</code><span class="sig-paren">(</span><em>arg0: List[std_data::mbes_ping], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.height_map_from_pings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct height map from mbes_ping::PingsT</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.height_map_to_texture">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">height_map_to_texture</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]]</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[uint8[m, n]], numpy.ndarray[uint8[m, n]], numpy.ndarray[uint8[m, n]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.height_map_to_texture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get R, G, B color textures from height map</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.mesh_from_cloud">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">mesh_from_cloud</code><span class="sig-paren">(</span><em>arg0: List[numpy.ndarray[float64[3, 1]]], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.mesh_from_cloud" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct mesh from vector&lt;Eigen::Vector3d&gt;</p>
 </dd></dl>
 
 <dl class="function">
@@ -176,7 +195,7 @@
 
 <dl class="function">
 <dt id="auvlib.bathy_maps.mesh_map.mesh_from_pings">
-<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">mesh_from_pings</code><span class="sig-paren">(</span><em>arg0: List[auvlib.data_tools.std_data.mbes_ping], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.mesh_from_pings" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">mesh_from_pings</code><span class="sig-paren">(</span><em>arg0: List[std_data::mbes_ping], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.mesh_from_pings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct mesh from mbes_ping::PingsT</p>
 </dd></dl>
 
@@ -190,6 +209,18 @@
 <dt id="auvlib.bathy_maps.mesh_map.show_mesh">
 <code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">show_mesh</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.show_mesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display mesh using igl viewer</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.show_textured_mesh">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">show_textured_mesh</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[uint8[m, n]], arg3: numpy.ndarray[uint8[m, n]], arg4: numpy.ndarray[uint8[m, n]], arg5: numpy.ndarray[float64[2, 2]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.show_textured_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display textured mesh using igl viewer</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.write_dae_mesh">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">write_dae_mesh</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: unicode</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.write_dae_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write vertices and faces to a .dae file</p>
 </dd></dl>
 
 </div>

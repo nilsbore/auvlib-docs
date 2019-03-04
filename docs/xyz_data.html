@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>data_tools &mdash; auvlib 0.1 documentation</title>
+  <title>xyz_data &mdash; auvlib 0.1 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="std_data" href="std_data.html" />
-    <link rel="prev" title="auvlib" href="auvlib.html" /> 
+    <link rel="next" title="bathy_maps" href="bathy_maps.html" />
+    <link rel="prev" title="csv_data" href="csv_data.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -80,13 +80,13 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="auvlib.html">auvlib</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">data_tools</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="data_tools.html">data_tools</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="std_data.html">std_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gsf_data.html">gsf_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="all_data.html">all_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="xtf_data.html">xtf_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="csv_data.html">csv_data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="xyz_data.html">xyz_data</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">xyz_data</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="bathy_maps.html">bathy_maps</a></li>
@@ -140,13 +140,15 @@
         
           <li><a href="auvlib.html">auvlib</a> &raquo;</li>
         
-      <li>data_tools</li>
+          <li><a href="data_tools.html">data_tools</a> &raquo;</li>
+        
+      <li>xyz_data</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/data_tools.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/xyz_data.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -159,38 +161,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="data-tools">
-<h1>data_tools<a class="headerlink" href="#data-tools" title="Permalink to this headline">¶</a></h1>
-<p>Data structures for parsing and storing different
-kinds of maritime data, and to convert them into
-common std_data data structures.</p>
-<p>The code below shows a simple example of reading
-a folder of gsf files, converting them into the
-standard multibeam format, and saving the produced
-bathymetric map as an image.</p>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">auvlib.data_tools</span> <span class="k">import</span> <span class="n">std_data</span><span class="p">,</span> <span class="n">gsf_data</span>
-<span class="kn">from</span> <span class="nn">auvlib.bathy_maps</span> <span class="k">import</span> <span class="n">draw_map</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+  <div class="section" id="module-auvlib.data_tools.xyz_data">
+<span id="xyz-data"></span><h1>xyz_data<a class="headerlink" href="#module-auvlib.data_tools.xyz_data" title="Permalink to this headline">¶</a></h1>
+<p>Basic utilities for working with the xyz file format</p>
+<dl class="class">
+<dt id="auvlib.data_tools.xyz_data.cloud">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.xyz_data.</code><code class="descname">cloud</code><a class="headerlink" href="#auvlib.data_tools.xyz_data.cloud" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for xyz point cloud type</p>
+<dl class="method">
+<dt id="auvlib.data_tools.xyz_data.cloud.parse_file">
+<code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[numpy.ndarray[float64[3, 1]]]<a class="headerlink" href="#auvlib.data_tools.xyz_data.cloud.parse_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse xyz_data::Points from .xyz file</p>
+</dd></dl>
 
-<span class="n">gsf_pings</span> <span class="o">=</span> <span class="n">gsf_data</span><span class="o">.</span><span class="n">gsf_mbes_ping</span><span class="o">.</span><span class="n">parse_folder</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># parse folder of gsf data</span>
-<span class="n">mbes_pings</span> <span class="o">=</span> <span class="n">gsf_data</span><span class="o">.</span><span class="n">convert_pings</span><span class="p">(</span><span class="n">gsf_pings</span><span class="p">)</span> <span class="c1"># convert to std_data pings</span>
+<dl class="method">
+<dt id="auvlib.data_tools.xyz_data.cloud.parse_folder">
+<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[numpy.ndarray[float64[3, 1]]]<a class="headerlink" href="#auvlib.data_tools.xyz_data.cloud.parse_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse xyz_data::Points from folder of .xyz files</p>
+</dd></dl>
 
-<span class="n">d</span> <span class="o">=</span> <span class="n">draw_map</span><span class="o">.</span><span class="n">BathyMapImage</span><span class="p">(</span><span class="n">mbes_pings</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="c1"># create a bathymetry height map</span>
-<span class="n">d</span><span class="o">.</span><span class="n">draw_height_map</span><span class="p">(</span><span class="n">mbes_pings</span><span class="p">)</span> <span class="c1"># draw the height map</span>
-<span class="n">d</span><span class="o">.</span><span class="n">draw_track</span><span class="p">(</span><span class="n">mbes_pings</span><span class="p">)</span> <span class="c1"># draw the track of the vehicle</span>
-<span class="n">d</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;height_map.png&quot;</span><span class="p">)</span> <span class="c1"># save the height map to &quot;height_map.png&quot;</span>
-</pre></div>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="std_data.html">std_data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gsf_data.html">gsf_data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="all_data.html">all_data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xtf_data.html">xtf_data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="csv_data.html">csv_data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xyz_data.html">xyz_data</a></li>
-</ul>
-</div>
+<dl class="method">
+<dt id="auvlib.data_tools.xyz_data.cloud.read_data">
+<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[numpy.ndarray[float64[3, 1]]]<a class="headerlink" href="#auvlib.data_tools.xyz_data.cloud.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read xyz_data::Points from .cereal file</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.data_tools.xyz_data.write_data">
+<code class="descclassname">auvlib.data_tools.xyz_data.</code><code class="descname">write_data</code><span class="sig-paren">(</span><em>arg0: List[numpy.ndarray[float64[3, 1]]], arg1: unicode</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.data_tools.xyz_data.write_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write array of Vector3d to .cereal file</p>
+</dd></dl>
+
 </div>
 
 
@@ -201,10 +204,10 @@ bathymetric map as an image.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="std_data.html" class="btn btn-neutral float-right" title="std_data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="bathy_maps.html" class="btn btn-neutral float-right" title="bathy_maps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="auvlib.html" class="btn btn-neutral" title="auvlib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="csv_data.html" class="btn btn-neutral" title="csv_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

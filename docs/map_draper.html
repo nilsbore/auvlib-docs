@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="sonar_tracing" href="sonar_tracing.html" />
+    <link rel="next" title="sss_gen_sim" href="sss_gen_sim.html" />
     <link rel="prev" title="patch_draper" href="patch_draper.html" /> 
 
   
@@ -86,6 +86,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mesh_map.html">mesh_map</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patch_draper.html">patch_draper</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">map_draper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sss_gen_sim.html">sss_gen_sim</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sonar_tracing.html">sonar_tracing</a></li>
@@ -223,8 +224,14 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="auvlib.bathy_maps.map_draper.convert_maps_to_single_angle_patches">
+<code class="descclassname">auvlib.bathy_maps.map_draper.</code><code class="descname">convert_maps_to_single_angle_patches</code><span class="sig-paren">(</span><em>arg0: List[auvlib.bathy_maps.map_draper.sss_map_image], arg1: numpy.ndarray[float64[m, n]], arg2: float</em><span class="sig-paren">)</span> &#x2192; List[sss_patch_views]<a class="headerlink" href="#auvlib.bathy_maps.map_draper.convert_maps_to_single_angle_patches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert sss_map_image::ImagesT to sss_patch_views::ViewsT, but only from one angle in each case</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="auvlib.bathy_maps.map_draper.drape_maps">
-<code class="descclassname">auvlib.bathy_maps.map_draper.</code><code class="descname">drape_maps</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[float64[2, 2]], arg3: List[auvlib.data_tools.xtf_data.xtf_sss_ping], arg4: List[auvlib.data_tools.csv_data.csv_asvp_sound_speed], arg5: float, arg6: float, arg7: Callable[[auvlib.bathy_maps.map_draper.sss_map_image], None]</em><span class="sig-paren">)</span> &#x2192; List[auvlib.bathy_maps.map_draper.sss_map_image]<a class="headerlink" href="#auvlib.bathy_maps.map_draper.drape_maps" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">auvlib.bathy_maps.map_draper.</code><code class="descname">drape_maps</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[float64[2, 2]], arg3: List[xtf_data::xtf_sss_ping], arg4: List[csv_data::csv_asvp_sound_speed], arg5: float, arg6: float, arg7: Callable[[auvlib.bathy_maps.map_draper.sss_map_image], None]</em><span class="sig-paren">)</span> &#x2192; List[auvlib.bathy_maps.map_draper.sss_map_image]<a class="headerlink" href="#auvlib.bathy_maps.map_draper.drape_maps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay xtf_sss_ping::PingsT sidescan data on a mesh and get sss_map_image::ViewsT</p>
 </dd></dl>
 
@@ -263,6 +270,12 @@
 </dd></dl>
 
 <dl class="attribute">
+<dt id="auvlib.bathy_maps.map_draper.sss_map_image.sss_ping_duration">
+<code class="descname">sss_ping_duration</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_map_image.sss_ping_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="auvlib.bathy_maps.map_draper.sss_map_image.sss_waterfall_cross_track">
 <code class="descname">sss_waterfall_cross_track</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_map_image.sss_waterfall_cross_track" title="Permalink to this definition">¶</a></dt>
 <dd><p>Member</p>
@@ -277,6 +290,12 @@
 <dl class="attribute">
 <dt id="auvlib.bathy_maps.map_draper.sss_map_image.sss_waterfall_image">
 <code class="descname">sss_waterfall_image</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_map_image.sss_waterfall_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.map_draper.sss_map_image.sss_waterfall_model">
+<code class="descname">sss_waterfall_model</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_map_image.sss_waterfall_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Member</p>
 </dd></dl>
 
@@ -298,7 +317,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sonar_tracing.html" class="btn btn-neutral float-right" title="sonar_tracing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sss_gen_sim.html" class="btn btn-neutral float-right" title="sss_gen_sim" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="patch_draper.html" class="btn btn-neutral" title="patch_draper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
