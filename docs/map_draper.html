@@ -198,6 +198,12 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.MapDraper.set_store_map_images">
+<code class="descname">set_store_map_images</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MapDraper</em>, <em>arg0: bool</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MapDraper.set_store_map_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set if the draper should save and return map images at the end</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="auvlib.bathy_maps.map_draper.MapDraper.set_vehicle_mesh">
 <code class="descname">set_vehicle_mesh</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MapDraper, arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[float64[m, n]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MapDraper.set_vehicle_mesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide the viewer with a vehicle model, purely for visualization</p>
@@ -206,6 +212,60 @@
 <dl class="method">
 <dt id="auvlib.bathy_maps.map_draper.MapDraper.show">
 <code class="descname">show</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MapDraper</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MapDraper.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the draping, and show the visualizer</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.bathy_maps.map_draper.MeasDataDraper">
+<em class="property">class </em><code class="descclassname">auvlib.bathy_maps.map_draper.</code><code class="descname">MeasDataDraper</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.MeasDataDraper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for draping the whole data set of sidescan pings onto a bathymetry mesh</p>
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.MeasDataDraper.get_images">
+<code class="descname">get_images</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MeasDataDraper</em><span class="sig-paren">)</span> &#x2192; List[auvlib.bathy_maps.map_draper.sss_meas_data]<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MeasDataDraper.get_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the sss_map_image::ImagesT that have been gathered so far</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.MeasDataDraper.set_image_callback">
+<code class="descname">set_image_callback</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MeasDataDraper, arg0: Callable[[auvlib.bathy_maps.map_draper.sss_meas_data], None]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MeasDataDraper.set_image_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the function to be called when an entire sidescan map is done</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.MeasDataDraper.set_ray_tracing_enabled">
+<code class="descname">set_ray_tracing_enabled</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MeasDataDraper</em>, <em>arg0: bool</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MeasDataDraper.set_ray_tracing_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set if ray tracing through water layers should be enabled. Takes more time but is recommended if there are large speed differences</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.MeasDataDraper.set_resolution">
+<code class="descname">set_resolution</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MeasDataDraper</em>, <em>arg0: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MeasDataDraper.set_resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the resolution of the gathered maps, default is ~3.75</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.MeasDataDraper.set_sidescan_yaw">
+<code class="descname">set_sidescan_yaw</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MeasDataDraper</em>, <em>arg0: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MeasDataDraper.set_sidescan_yaw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set yaw correction of sidescan with respect to nav frame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.MeasDataDraper.set_store_map_images">
+<code class="descname">set_store_map_images</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MeasDataDraper</em>, <em>arg0: bool</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MeasDataDraper.set_store_map_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set if the draper should save and return map images at the end</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.MeasDataDraper.set_vehicle_mesh">
+<code class="descname">set_vehicle_mesh</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MeasDataDraper, arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[float64[m, n]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MeasDataDraper.set_vehicle_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provide the viewer with a vehicle model, purely for visualization</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.MeasDataDraper.show">
+<code class="descname">show</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.map_draper.MeasDataDraper</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.MeasDataDraper.show" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the draping, and show the visualizer</p>
 </dd></dl>
 
@@ -263,6 +323,12 @@
 <dd><p>Read sss_map_image::ImagesT from .cereal file</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.sss_map_image.read_single">
+<code class="descname">read_single</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; auvlib.bathy_maps.map_draper.sss_map_image<a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_map_image.read_single" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read single sss_map_image from .cereal file</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="auvlib.bathy_maps.map_draper.sss_map_image.sss_map_image">
 <code class="descname">sss_map_image</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_map_image.sss_map_image" title="Permalink to this definition">¶</a></dt>
@@ -301,10 +367,86 @@
 
 </dd></dl>
 
+<dl class="class">
+<dt id="auvlib.bathy_maps.map_draper.sss_meas_data">
+<em class="property">class </em><code class="descclassname">auvlib.bathy_maps.map_draper.</code><code class="descname">sss_meas_data</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_meas_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for sidescan views of a patch from different survey lines</p>
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.map_draper.sss_meas_data.ping_id">
+<code class="descname">ping_id</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_meas_data.ping_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.map_draper.sss_meas_data.pos">
+<code class="descname">pos</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_meas_data.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.sss_meas_data.read_data">
+<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.bathy_maps.map_draper.sss_meas_data]<a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_meas_data.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read sss_meas_data::ImagesT from .cereal file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.map_draper.sss_meas_data.read_single">
+<code class="descname">read_single</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; auvlib.bathy_maps.map_draper.sss_meas_data<a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_meas_data.read_single" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read single sss_meas_data from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.map_draper.sss_meas_data.rpy">
+<code class="descname">rpy</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_meas_data.rpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.map_draper.sss_meas_data.sss_waterfall_hits_X">
+<code class="descname">sss_waterfall_hits_X</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_meas_data.sss_waterfall_hits_X" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.map_draper.sss_meas_data.sss_waterfall_hits_Y">
+<code class="descname">sss_waterfall_hits_Y</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_meas_data.sss_waterfall_hits_Y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.map_draper.sss_meas_data.sss_waterfall_hits_Z">
+<code class="descname">sss_waterfall_hits_Z</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_meas_data.sss_waterfall_hits_Z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.map_draper.sss_meas_data.sss_waterfall_image">
+<code class="descname">sss_waterfall_image</code><a class="headerlink" href="#auvlib.bathy_maps.map_draper.sss_meas_data.sss_waterfall_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="function">
 <dt id="auvlib.bathy_maps.map_draper.write_data">
-<code class="descclassname">auvlib.bathy_maps.map_draper.</code><code class="descname">write_data</code><span class="sig-paren">(</span><em>arg0: List[auvlib.bathy_maps.map_draper.sss_map_image], arg1: unicode</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.map_draper.write_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write sss_map_image::ImagesT to .cereal file</p>
+<code class="descclassname">auvlib.bathy_maps.map_draper.</code><code class="descname">write_data</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#auvlib.bathy_maps.map_draper.write_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li>write_data(arg0: List[auvlib.bathy_maps.map_draper.sss_map_image], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write sss_map_image::ImagesT to .cereal file</p>
+<ol class="arabic simple" start="2">
+<li>write_data(arg0: auvlib.bathy_maps.map_draper.sss_map_image, arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write sss_map_image to .cereal file</p>
+<ol class="arabic simple" start="3">
+<li>write_data(arg0: List[auvlib.bathy_maps.map_draper.sss_meas_data], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write sss_meas_data::ImagesT to .cereal file</p>
+<ol class="arabic simple" start="4">
+<li>write_data(arg0: auvlib.bathy_maps.map_draper.sss_meas_data, arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write sss_meas_data to .cereal file</p>
 </dd></dl>
 
 </div>

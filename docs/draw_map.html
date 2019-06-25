@@ -175,8 +175,16 @@
 
 <dl class="method">
 <dt id="auvlib.bathy_maps.draw_map.BathyMapImage.draw_height_map">
-<code class="descname">draw_height_map</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.draw_map.BathyMapImage, arg0: List[std_data::mbes_ping]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.draw_map.BathyMapImage.draw_height_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw height map from mbes_ping::PingsT</p>
+<code class="descname">draw_height_map</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#auvlib.bathy_maps.draw_map.BathyMapImage.draw_height_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li>draw_height_map(self: auvlib.bathy_maps.draw_map.BathyMapImage, arg0: List[std_data::mbes_ping]) -&gt; None</li>
+</ol>
+<p>Draw height map from mbes_ping::PingsT</p>
+<ol class="arabic simple" start="2">
+<li>draw_height_map(self: auvlib.bathy_maps.draw_map.BathyMapImage, arg0: numpy.ndarray[float64[m, n]]) -&gt; None</li>
+</ol>
+<p>Draw height map from pre-computed height map matrix</p>
 </dd></dl>
 
 <dl class="method">
@@ -193,8 +201,22 @@
 
 <dl class="method">
 <dt id="auvlib.bathy_maps.draw_map.BathyMapImage.draw_track">
-<code class="descname">draw_track</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.draw_map.BathyMapImage, arg0: List[std_data::mbes_ping]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.draw_map.BathyMapImage.draw_track" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw vehicle track from mbes_ping::PingsT</p>
+<code class="descname">draw_track</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#auvlib.bathy_maps.draw_map.BathyMapImage.draw_track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li>draw_track(self: auvlib.bathy_maps.draw_map.BathyMapImage, arg0: List[std_data::mbes_ping]) -&gt; None</li>
+</ol>
+<p>Draw vehicle track from mbes_ping::PingsT</p>
+<ol class="arabic simple" start="2">
+<li>draw_track(self: auvlib.bathy_maps.draw_map.BathyMapImage, arg0: List[numpy.ndarray[float64[3, 1]]]) -&gt; None</li>
+</ol>
+<p>Draw vehicle track from list of Vector3d</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.draw_map.BathyMapImage.rotate_crop_image">
+<code class="descname">rotate_crop_image</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.draw_map.BathyMapImage, arg0: numpy.ndarray[float64[3, 1]], arg1: numpy.ndarray[float64[3, 1]], arg2: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.draw_map.BathyMapImage.rotate_crop_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate and crop the image from a start and an end point, and a width in between</p>
 </dd></dl>
 
 <dl class="method">

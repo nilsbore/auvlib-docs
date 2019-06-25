@@ -164,8 +164,26 @@
 <span id="mesh-map"></span><h1>mesh_map<a class="headerlink" href="#module-auvlib.bathy_maps.mesh_map" title="Permalink to this headline">¶</a></h1>
 <p>Data structure for constructing and viewing a bathymetry mesh and for draping the mesh with sidescan data</p>
 <dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.cut_square_around_point">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">cut_square_around_point</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[float64[2, 1]], arg3: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.cut_square_around_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cut out a square from within the mesh, around point p with side length</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.depth_at_point">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">depth_at_point</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[float64[3, 1]]</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.depth_at_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the depth at point in the mesh, returns 0 if no mesh at point</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="auvlib.bathy_maps.mesh_map.height_map_from_cloud">
 <code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">height_map_from_cloud</code><span class="sig-paren">(</span><em>arg0: List[numpy.ndarray[float64[3, 1]]], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.height_map_from_cloud" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct height map from vector&lt;Eigen::Vector3d&gt;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.height_map_from_dtm_cloud">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">height_map_from_dtm_cloud</code><span class="sig-paren">(</span><em>arg0: List[numpy.ndarray[float64[3, 1]]], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.height_map_from_dtm_cloud" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct height map from vector&lt;Eigen::Vector3d&gt;</p>
 </dd></dl>
 
@@ -188,6 +206,12 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.mesh_from_dtm_cloud">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">mesh_from_dtm_cloud</code><span class="sig-paren">(</span><em>arg0: List[numpy.ndarray[float64[3, 1]]], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.mesh_from_dtm_cloud" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct mesh from vector&lt;Eigen::Vector3d&gt;</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="auvlib.bathy_maps.mesh_map.mesh_from_height_map">
 <code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">mesh_from_height_map</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[float64[2, 2]]</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.mesh_from_height_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct mesh from height map</p>
@@ -197,6 +221,12 @@
 <dt id="auvlib.bathy_maps.mesh_map.mesh_from_pings">
 <code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">mesh_from_pings</code><span class="sig-paren">(</span><em>arg0: List[std_data::mbes_ping], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.mesh_from_pings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct mesh from mbes_ping::PingsT</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.read_ply_mesh">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">read_ply_mesh</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.read_ply_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read vertices and faces from a .ply file</p>
 </dd></dl>
 
 <dl class="function">

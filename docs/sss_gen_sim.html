@@ -168,6 +168,18 @@
 <em class="property">class </em><code class="descclassname">auvlib.bathy_maps.sss_gen_sim.</code><code class="descname">SSSGenSim</code><a class="headerlink" href="#auvlib.bathy_maps.sss_gen_sim.SSSGenSim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class for simulating sidescan pings from a bathymetry mesh</p>
 <dl class="method">
+<dt id="auvlib.bathy_maps.sss_gen_sim.SSSGenSim.draw_model_waterfall">
+<code class="descname">draw_model_waterfall</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.sss_gen_sim.SSSGenSim, arg0: numpy.ndarray[float64[m, n]], arg1: float</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[float64[m, n]]<a class="headerlink" href="#auvlib.bathy_maps.sss_gen_sim.SSSGenSim.draw_model_waterfall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the idealized model waterfall from the incidence image</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.sss_gen_sim.SSSGenSim.draw_sim_waterfall">
+<code class="descname">draw_sim_waterfall</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.sss_gen_sim.SSSGenSim, arg0: numpy.ndarray[float64[m, n]]</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[float64[m, n]]<a class="headerlink" href="#auvlib.bathy_maps.sss_gen_sim.SSSGenSim.draw_sim_waterfall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the simulated waterfall from the incidence image</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="auvlib.bathy_maps.sss_gen_sim.SSSGenSim.set_gen_callback">
 <code class="descname">set_gen_callback</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.sss_gen_sim.SSSGenSim, arg0: Callable[[numpy.ndarray[float64[m, n]]], numpy.ndarray[float64[m, n]]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.sss_gen_sim.SSSGenSim.set_gen_callback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the function that generates sidescan patches from bathymetry</p>
@@ -192,9 +204,15 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="auvlib.bathy_maps.sss_gen_sim.SSSGenSim.set_sss_from_bathy">
+<code class="descname">set_sss_from_bathy</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.sss_gen_sim.SSSGenSim</em>, <em>arg0: bool</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.sss_gen_sim.SSSGenSim.set_sss_from_bathy" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, predicts sidescan from local bathymetry window</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="auvlib.bathy_maps.sss_gen_sim.SSSGenSim.set_sss_from_waterfall">
 <code class="descname">set_sss_from_waterfall</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.sss_gen_sim.SSSGenSim</em>, <em>arg0: bool</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.sss_gen_sim.SSSGenSim.set_sss_from_waterfall" title="Permalink to this definition">¶</a></dt>
-<dd><p>If true, predicts sidescan from waterfall elevation image, otherwise from local bathymetry window</p>
+<dd><p>If true, predicts sidescan from waterfall elevation image</p>
 </dd></dl>
 
 <dl class="method">
