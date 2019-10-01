@@ -17,34 +17,46 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="gsf_data" href="gsf_data.html" />
     <link rel="prev" title="data_tools" href="data_tools.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -165,43 +177,97 @@
 <span id="std-data"></span><h1>std_data<a class="headerlink" href="#module-auvlib.data_tools.std_data" title="Permalink to this headline">¶</a></h1>
 <p>Standard interfaces for working with different kinds of data. All data types should be converted into these before processing</p>
 <dl class="class">
+<dt id="auvlib.data_tools.std_data.attitude_entry">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.std_data.</code><code class="descname">attitude_entry</code><a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard class interface for working with attitude data</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.attitude_entry.first_in_file_">
+<code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry.first_in_file_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is first measurement in file?</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.attitude_entry.heave">
+<code class="descname">heave</code><a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry.heave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Heave</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.attitude_entry.pitch">
+<code class="descname">pitch</code><a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry.pitch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radian pitch in ENU coordinates</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.std_data.attitude_entry.read_data">
+<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.attitude_entry]<a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read attitude_entry::Entries from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.attitude_entry.roll">
+<code class="descname">roll</code><a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry.roll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radian roll in ENU coordinates</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.attitude_entry.time_stamp_">
+<code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry.time_stamp_" title="Permalink to this definition">¶</a></dt>
+<dd><p>UNIX timestamp</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.attitude_entry.time_string_">
+<code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry.time_string_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Readable date of measurement</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.attitude_entry.yaw">
+<code class="descname">yaw</code><a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry.yaw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radian yaw in ENU coordinates</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="auvlib.data_tools.std_data.mbes_ping">
 <em class="property">class </em><code class="descclassname">auvlib.data_tools.std_data.</code><code class="descname">mbes_ping</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard class interface for working with multibeam data</p>
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.back_scatter">
 <code class="descname">back_scatter</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.back_scatter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>The beam reflectivities</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.beams">
 <code class="descname">beams</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.beams" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>The beam hits in world ENU coordinates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.first_in_file_">
 <code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.first_in_file_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Is first measurement in file?</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.heading_">
 <code class="descname">heading_</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.heading_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Yaw in ENU coordinates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.heave_">
 <code class="descname">heave_</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.heave_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Heave</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.id_">
 <code class="descname">id_</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.id_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Sequential ID of measurement</p>
 </dd></dl>
 
 <dl class="method">
@@ -219,13 +285,13 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.pitch_">
 <code class="descname">pitch_</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.pitch_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Radian pitch in ENU coordinates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.pos_">
 <code class="descname">pos_</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.pos_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Position in ENU coordinates</p>
 </dd></dl>
 
 <dl class="method">
@@ -237,19 +303,19 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.roll_">
 <code class="descname">roll_</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.roll_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Radian roll in ENU coordinates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.time_stamp_">
 <code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.time_stamp_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>UNIX timestamp</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.mbes_ping.time_string_">
 <code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.time_string_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Readable date of measurement</p>
 </dd></dl>
 
 </dd></dl>
@@ -261,7 +327,7 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.nav_entry.first_in_file_">
 <code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.first_in_file_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Is first measurement in file?</p>
 </dd></dl>
 
 <dl class="method">
@@ -279,7 +345,7 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.nav_entry.pos_">
 <code class="descname">pos_</code><a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.pos_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Position in ENU coordinates</p>
 </dd></dl>
 
 <dl class="method">
@@ -291,13 +357,13 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.nav_entry.time_stamp_">
 <code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.time_stamp_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>UNIX timestamp</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.std_data.nav_entry.time_string_">
 <code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.time_string_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Readable date of measurement</p>
 </dd></dl>
 
 </dd></dl>
@@ -314,6 +380,10 @@
 <li>write_data(arg0: List[auvlib.data_tools.std_data.nav_entry], arg1: unicode) -&gt; None</li>
 </ol>
 <p>Write nav_entry::EntriesT to .cereal file</p>
+<ol class="arabic simple" start="3">
+<li>write_data(arg0: List[auvlib.data_tools.std_data.attitude_entry], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write attitude_entry::EntriesT to .cereal file</p>
 </dd></dl>
 
 </div>
@@ -329,7 +399,7 @@
         <a href="gsf_data.html" class="btn btn-neutral float-right" title="gsf_data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="data_tools.html" class="btn btn-neutral" title="data_tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="data_tools.html" class="btn btn-neutral float-left" title="data_tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -355,26 +425,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

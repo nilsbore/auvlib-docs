@@ -17,34 +17,46 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="bathy_maps" href="bathy_maps.html" />
     <link rel="prev" title="csv_data" href="csv_data.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -169,6 +181,18 @@
 <em class="property">class </em><code class="descclassname">auvlib.data_tools.xyz_data.</code><code class="descname">cloud</code><a class="headerlink" href="#auvlib.data_tools.xyz_data.cloud" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class for xyz point cloud type</p>
 <dl class="method">
+<dt id="auvlib.data_tools.xyz_data.cloud.from_matrix">
+<code class="descname">from_matrix</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]]</em><span class="sig-paren">)</span> &#x2192; List[numpy.ndarray[float64[3, 1]]]<a class="headerlink" href="#auvlib.data_tools.xyz_data.cloud.from_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Points from an Nx3 matrix</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.data_tools.xyz_data.cloud.from_pings">
+<code class="descname">from_pings</code><span class="sig-paren">(</span><em>arg0: List[std_data::mbes_ping]</em><span class="sig-paren">)</span> &#x2192; List[List[numpy.ndarray[float64[3, 1]]]]<a class="headerlink" href="#auvlib.data_tools.xyz_data.cloud.from_pings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create vector of xyz_data::Points from std_data::mbes_ping::PingsT by splitting at first_in_file_==True</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="auvlib.data_tools.xyz_data.cloud.parse_file">
 <code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[numpy.ndarray[float64[3, 1]]]<a class="headerlink" href="#auvlib.data_tools.xyz_data.cloud.parse_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse xyz_data::Points from .xyz file</p>
@@ -186,6 +210,24 @@
 <dd><p>Read xyz_data::Points from .cereal file</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="auvlib.data_tools.xyz_data.cloud.to_matrix">
+<code class="descname">to_matrix</code><span class="sig-paren">(</span><em>arg0: List[numpy.ndarray[float64[3, 1]]]</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[float64[m, n]]<a class="headerlink" href="#auvlib.data_tools.xyz_data.cloud.to_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an Nx3 matrix from the list of points</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.data_tools.xyz_data.subsample_points">
+<code class="descclassname">auvlib.data_tools.xyz_data.</code><code class="descname">subsample_points</code><span class="sig-paren">(</span><em>arg0: List[numpy.ndarray[float64[3, 1]]], arg1: int</em><span class="sig-paren">)</span> &#x2192; List[numpy.ndarray[float64[3, 1]]]<a class="headerlink" href="#auvlib.data_tools.xyz_data.subsample_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subsample by skipping N points at a time</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.data_tools.xyz_data.transform_points">
+<code class="descclassname">auvlib.data_tools.xyz_data.</code><code class="descname">transform_points</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[4, 4]], arg1: List[numpy.ndarray[float64[3, 1]]]</em><span class="sig-paren">)</span> &#x2192; List[numpy.ndarray[float64[3, 1]]]<a class="headerlink" href="#auvlib.data_tools.xyz_data.transform_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform using 4x4 transformation matrix T</p>
 </dd></dl>
 
 <dl class="function">
@@ -207,7 +249,7 @@
         <a href="bathy_maps.html" class="btn btn-neutral float-right" title="bathy_maps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="csv_data.html" class="btn btn-neutral" title="csv_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="csv_data.html" class="btn btn-neutral float-left" title="csv_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -233,26 +275,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,34 +17,46 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="map_draper" href="map_draper.html" />
     <link rel="prev" title="mesh_map" href="mesh_map.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -222,6 +234,12 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="auvlib.bathy_maps.patch_draper.PatchDraper.set_tracing_map_size">
+<code class="descname">set_tracing_map_size</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.patch_draper.PatchDraper</em>, <em>arg0: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.patch_draper.PatchDraper.set_tracing_map_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set size of slice of map where we do ray tracing. Smaller makes it faster but you might cut off valid sidescan angles</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="auvlib.bathy_maps.patch_draper.PatchDraper.set_vehicle_mesh">
 <code class="descname">set_vehicle_mesh</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.patch_draper.PatchDraper, arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[float64[m, n]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.patch_draper.PatchDraper.set_vehicle_mesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide the viewer with a vehicle model, purely for visualization</p>
@@ -266,31 +284,31 @@
 <dl class="attribute">
 <dt id="auvlib.bathy_maps.patch_draper.sss_patch_views.patch_height">
 <code class="descname">patch_height</code><a class="headerlink" href="#auvlib.bathy_maps.patch_draper.sss_patch_views.patch_height" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>TODO</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.bathy_maps.patch_draper.sss_patch_views.patch_origin">
 <code class="descname">patch_origin</code><a class="headerlink" href="#auvlib.bathy_maps.patch_draper.sss_patch_views.patch_origin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Origin of patch in map coordinates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.bathy_maps.patch_draper.sss_patch_views.patch_size">
 <code class="descname">patch_size</code><a class="headerlink" href="#auvlib.bathy_maps.patch_draper.sss_patch_views.patch_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Size of the patch</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.bathy_maps.patch_draper.sss_patch_views.patch_view_dirs">
 <code class="descname">patch_view_dirs</code><a class="headerlink" href="#auvlib.bathy_maps.patch_draper.sss_patch_views.patch_view_dirs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Directions of views (yaw)</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.bathy_maps.patch_draper.sss_patch_views.patch_view_pos">
 <code class="descname">patch_view_pos</code><a class="headerlink" href="#auvlib.bathy_maps.patch_draper.sss_patch_views.patch_view_pos" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Positions of views</p>
 </dd></dl>
 
 <dl class="method">
@@ -302,7 +320,7 @@
 <dl class="attribute">
 <dt id="auvlib.bathy_maps.patch_draper.sss_patch_views.sss_views">
 <code class="descname">sss_views</code><a class="headerlink" href="#auvlib.bathy_maps.patch_draper.sss_patch_views.sss_views" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Sidescan views of patch</p>
 </dd></dl>
 
 </dd></dl>
@@ -326,7 +344,7 @@
         <a href="map_draper.html" class="btn btn-neutral float-right" title="map_draper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mesh_map.html" class="btn btn-neutral" title="mesh_map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mesh_map.html" class="btn btn-neutral float-left" title="mesh_map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -352,26 +370,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
