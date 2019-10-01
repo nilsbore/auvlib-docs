@@ -17,34 +17,46 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="xtf_data" href="xtf_data.html" />
     <link rel="prev" title="gsf_data" href="gsf_data.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -171,19 +183,19 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_echosounder_depth.depth_">
 <code class="descname">depth_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.depth_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Depth</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_echosounder_depth.first_in_file_">
 <code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.first_in_file_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Is first measurement in file?</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_echosounder_depth.id_">
 <code class="descname">id_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.id_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Sequential ID of measurement</p>
 </dd></dl>
 
 <dl class="method">
@@ -207,13 +219,13 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_echosounder_depth.time_stamp_">
 <code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.time_stamp_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>UNIX timestamp</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_echosounder_depth.time_string_">
 <code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_echosounder_depth.time_string_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Readable date of measurement</p>
 </dd></dl>
 
 </dd></dl>
@@ -225,25 +237,25 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_mbes_ping.beams">
 <code class="descname">beams</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.beams" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Positions of hist in sensor coordinates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_mbes_ping.first_in_file_">
 <code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.first_in_file_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Is first measurement in file?</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_mbes_ping.heading_">
 <code class="descname">heading_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.heading_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Radian yaw in ENU coordinates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_mbes_ping.id_">
 <code class="descname">id_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.id_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Sequential ID of measurement</p>
 </dd></dl>
 
 <dl class="method">
@@ -267,31 +279,31 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_mbes_ping.reflectivities">
 <code class="descname">reflectivities</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.reflectivities" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Return reflectivities</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_mbes_ping.sound_vel_">
 <code class="descname">sound_vel_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.sound_vel_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Sound velocity</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_mbes_ping.time_stamp_">
 <code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.time_stamp_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>UNIX timestamp</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_mbes_ping.time_string_">
 <code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.time_string_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Readable date of measurement</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_mbes_ping.transducer_depth_">
 <code class="descname">transducer_depth_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_mbes_ping.transducer_depth_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Depth of sensor</p>
 </dd></dl>
 
 </dd></dl>
@@ -303,13 +315,13 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_attitude.first_in_file_">
 <code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_attitude.first_in_file_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Is first measurement in file?</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_attitude.id_">
 <code class="descname">id_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_attitude.id_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Sequential ID of measurement</p>
 </dd></dl>
 
 <dl class="method">
@@ -333,19 +345,19 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_attitude.samples">
 <code class="descname">samples</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_attitude.samples" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>The measurements</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_attitude.time_stamp_">
 <code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_attitude.time_stamp_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>UNIX timestamp</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_attitude.time_string_">
 <code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_attitude.time_string_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Readable date of measurement</p>
 </dd></dl>
 
 </dd></dl>
@@ -357,31 +369,31 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_attitude_sample.heading">
 <code class="descname">heading</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_attitude_sample.heading" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Radian yaw in ENU coordinates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_attitude_sample.heave">
 <code class="descname">heave</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_attitude_sample.heave" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Heave</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_attitude_sample.ms_since_start">
 <code class="descname">ms_since_start</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_attitude_sample.ms_since_start" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Milliseconds since start of measurements</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_attitude_sample.pitch">
 <code class="descname">pitch</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_attitude_sample.pitch" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Radian pitch in ENU coordinates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_attitude_sample.roll">
 <code class="descname">roll</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_attitude_sample.roll" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Radian roll in ENU coordinates</p>
 </dd></dl>
 
 </dd></dl>
@@ -393,25 +405,25 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_depth.first_in_file_">
 <code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.first_in_file_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Is first measurement in file?</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_depth.height">
 <code class="descname">height</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.height" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Height</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_depth.height_type">
 <code class="descname">height_type</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.height_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>TODO</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_depth.id_">
 <code class="descname">id_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.id_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Sequential ID of measurement</p>
 </dd></dl>
 
 <dl class="method">
@@ -435,13 +447,13 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_depth.time_stamp_">
 <code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.time_stamp_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>UNIX timestamp</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_depth.time_string_">
 <code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_depth.time_string_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Readable date of measurement</p>
 </dd></dl>
 
 </dd></dl>
@@ -453,43 +465,43 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_entry.course_over_ground_">
 <code class="descname">course_over_ground_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.course_over_ground_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>TODO</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_entry.depth_">
 <code class="descname">depth_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.depth_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Depth</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_entry.first_in_file_">
 <code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.first_in_file_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Is first measurement in file?</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_entry.heading_">
 <code class="descname">heading_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.heading_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Radian yaw in ENU coordinates</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_entry.id_">
 <code class="descname">id_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.id_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Sequential ID of measurement</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_entry.lat_">
 <code class="descname">lat_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.lat_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Latitude</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_entry.long_">
 <code class="descname">long_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.long_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Longitude</p>
 </dd></dl>
 
 <dl class="method">
@@ -513,21 +525,33 @@
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_entry.time_stamp_">
 <code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.time_stamp_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>UNIX timestamp</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="auvlib.data_tools.all_data.all_nav_entry.time_string_">
 <code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.all_data.all_nav_entry.time_string_" title="Permalink to this definition">¶</a></dt>
-<dd><p>Member</p>
+<dd><p>Readable date of measurement</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.data_tools.all_data.convert_attitudes">
+<code class="descclassname">auvlib.data_tools.all_data.</code><code class="descname">convert_attitudes</code><span class="sig-paren">(</span><em>arg0: List[auvlib.data_tools.all_data.all_nav_attitude]</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.attitude_entry]<a class="headerlink" href="#auvlib.data_tools.all_data.convert_attitudes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert all_nav_attitude::EntriesT to std_data::attitude_entry::EntriesT</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="auvlib.data_tools.all_data.convert_matched_entries">
 <code class="descclassname">auvlib.data_tools.all_data.</code><code class="descname">convert_matched_entries</code><span class="sig-paren">(</span><em>arg0: List[auvlib.data_tools.all_data.all_mbes_ping], arg1: List[auvlib.data_tools.all_data.all_nav_entry]</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.mbes_ping]<a class="headerlink" href="#auvlib.data_tools.all_data.convert_matched_entries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Matches xtf_sss_ping::PingsT and csv_nav_entry::EntriesT and assign pos data to pings</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.data_tools.all_data.convert_sound_speeds">
+<code class="descclassname">auvlib.data_tools.all_data.</code><code class="descname">convert_sound_speeds</code><span class="sig-paren">(</span><em>arg0: List[auvlib.data_tools.all_data.all_mbes_ping]</em><span class="sig-paren">)</span> &#x2192; List[csv_data::csv_asvp_sound_speed]<a class="headerlink" href="#auvlib.data_tools.all_data.convert_sound_speeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert all_mbes_ping::PingsT to csv_asvp_sound_speed::EntriesT</p>
 </dd></dl>
 
 <dl class="function">
@@ -575,7 +599,7 @@
         <a href="xtf_data.html" class="btn btn-neutral float-right" title="xtf_data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gsf_data.html" class="btn btn-neutral" title="gsf_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="gsf_data.html" class="btn btn-neutral float-left" title="gsf_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -601,26 +625,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

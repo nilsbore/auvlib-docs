@@ -18,32 +18,44 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -189,6 +201,8 @@
       </ul></li>
       <li><a href="gsf_data.html#auvlib.data_tools.gsf_data.gsf_mbes_ping.amplitudes">amplitudes (auvlib.data_tools.gsf_data.gsf_mbes_ping attribute)</a>
 </li>
+      <li><a href="std_data.html#auvlib.data_tools.std_data.attitude_entry">attitude_entry (class in auvlib.data_tools.std_data)</a>
+</li>
       <li><a href="draw_map.html#module-auvlib.bathy_maps.draw_map">auvlib.bathy_maps.draw_map (module)</a>
 </li>
   </ul></td>
@@ -259,6 +273,10 @@
         <li><a href="patch_draper.html#auvlib.bathy_maps.patch_draper.color_jet_from_mesh">(in module auvlib.bathy_maps.patch_draper)</a>
 </li>
       </ul></li>
+      <li><a href="mesh_map.html#auvlib.bathy_maps.mesh_map.compute_normals">compute_normals() (in module auvlib.bathy_maps.mesh_map)</a>
+</li>
+      <li><a href="all_data.html#auvlib.data_tools.all_data.convert_attitudes">convert_attitudes() (in module auvlib.data_tools.all_data)</a>
+</li>
       <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.convert_maps_to_patches">convert_maps_to_patches() (in module auvlib.bathy_maps.map_draper)</a>
 </li>
       <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.convert_maps_to_single_angle_patches">convert_maps_to_single_angle_patches() (in module auvlib.bathy_maps.map_draper)</a>
@@ -272,6 +290,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="gsf_data.html#auvlib.data_tools.gsf_data.convert_pings">convert_pings() (in module auvlib.data_tools.gsf_data)</a>
+</li>
+      <li><a href="all_data.html#auvlib.data_tools.all_data.convert_sound_speeds">convert_sound_speeds() (in module auvlib.data_tools.all_data)</a>
 </li>
       <li><a href="xtf_data.html#auvlib.data_tools.xtf_data.correct_sensor_offset">correct_sensor_offset() (in module auvlib.data_tools.xtf_data)</a>
 </li>
@@ -344,6 +364,8 @@
 </li>
         <li><a href="gsf_data.html#auvlib.data_tools.gsf_data.gsf_mbes_ping.first_in_file_">(auvlib.data_tools.gsf_data.gsf_mbes_ping attribute)</a>
 </li>
+        <li><a href="std_data.html#auvlib.data_tools.std_data.attitude_entry.first_in_file_">(auvlib.data_tools.std_data.attitude_entry attribute)</a>
+</li>
         <li><a href="std_data.html#auvlib.data_tools.std_data.mbes_ping.first_in_file_">(auvlib.data_tools.std_data.mbes_ping attribute)</a>
 </li>
         <li><a href="std_data.html#auvlib.data_tools.std_data.nav_entry.first_in_file_">(auvlib.data_tools.std_data.nav_entry attribute)</a>
@@ -351,6 +373,12 @@
         <li><a href="xtf_data.html#auvlib.data_tools.xtf_data.xtf_sss_ping.first_in_file_">(auvlib.data_tools.xtf_data.xtf_sss_ping attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="xyz_data.html#auvlib.data_tools.xyz_data.cloud.from_matrix">from_matrix() (auvlib.data_tools.xyz_data.cloud method)</a>
+</li>
+      <li><a href="xyz_data.html#auvlib.data_tools.xyz_data.cloud.from_pings">from_pings() (auvlib.data_tools.xyz_data.cloud method)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -406,7 +434,11 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all_data.html#auvlib.data_tools.all_data.all_nav_attitude_sample.heave">heave (auvlib.data_tools.all_data.all_nav_attitude_sample attribute)</a>
+
+      <ul>
+        <li><a href="std_data.html#auvlib.data_tools.std_data.attitude_entry.heave">(auvlib.data_tools.std_data.attitude_entry attribute)</a>
 </li>
+      </ul></li>
       <li><a href="std_data.html#auvlib.data_tools.std_data.mbes_ping.heave_">heave_ (auvlib.data_tools.std_data.mbes_ping attribute)</a>
 </li>
       <li><a href="all_data.html#auvlib.data_tools.all_data.all_nav_depth.height">height (auvlib.data_tools.all_data.all_nav_depth attribute)</a>
@@ -443,6 +475,10 @@
         <li><a href="std_data.html#auvlib.data_tools.std_data.mbes_ping.id_">(auvlib.data_tools.std_data.mbes_ping attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="draw_map.html#auvlib.bathy_maps.draw_map.Image">Image (class in auvlib.bathy_maps.draw_map)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -485,18 +521,24 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="draw_map.html#auvlib.bathy_maps.draw_map.BathyMapImage.make_image">make_image() (auvlib.bathy_maps.draw_map.BathyMapImage method)</a>
+</li>
       <li><a href="xtf_data.html#auvlib.data_tools.xtf_data.make_waterfall_image">make_waterfall_image() (in module auvlib.data_tools.xtf_data)</a>
 </li>
       <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MapDraper">MapDraper (class in auvlib.bathy_maps.map_draper)</a>
 </li>
       <li><a href="all_data.html#auvlib.data_tools.all_data.match_attitude">match_attitude() (in module auvlib.data_tools.all_data)</a>
 </li>
-      <li><a href="std_data.html#auvlib.data_tools.std_data.mbes_ping">mbes_ping (class in auvlib.data_tools.std_data)</a>
+      <li><a href="xtf_data.html#auvlib.data_tools.xtf_data.match_attitudes">match_attitudes() (in module auvlib.data_tools.xtf_data)</a>
 </li>
-      <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MeasDataDraper">MeasDataDraper (class in auvlib.bathy_maps.map_draper)</a>
+      <li><a href="std_data.html#auvlib.data_tools.std_data.mbes_ping">mbes_ping (class in auvlib.data_tools.std_data)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MeasDataDraper">MeasDataDraper (class in auvlib.bathy_maps.map_draper)</a>
+</li>
+      <li><a href="mesh_map.html#auvlib.bathy_maps.mesh_map.mesh_and_normals_from_pings">mesh_and_normals_from_pings() (in module auvlib.bathy_maps.mesh_map)</a>
+</li>
       <li><a href="mesh_map.html#auvlib.bathy_maps.mesh_map.mesh_from_cloud">mesh_from_cloud() (in module auvlib.bathy_maps.mesh_map)</a>
 </li>
       <li><a href="mesh_map.html#auvlib.bathy_maps.mesh_map.mesh_from_dtm_cloud">mesh_from_dtm_cloud() (in module auvlib.bathy_maps.mesh_map)</a>
@@ -518,6 +560,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="gsf_data.html#auvlib.data_tools.gsf_data.gsf_sound_speed.near_speed">near_speed (auvlib.data_tools.gsf_data.gsf_sound_speed attribute)</a>
+</li>
+      <li><a href="mesh_map.html#auvlib.bathy_maps.mesh_map.normals_at_points">normals_at_points() (in module auvlib.bathy_maps.mesh_map)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -604,7 +648,11 @@
       <li><a href="xtf_data.html#auvlib.data_tools.xtf_data.xtf_sss_ping_side.pings">pings (auvlib.data_tools.xtf_data.xtf_sss_ping_side attribute)</a>
 </li>
       <li><a href="all_data.html#auvlib.data_tools.all_data.all_nav_attitude_sample.pitch">pitch (auvlib.data_tools.all_data.all_nav_attitude_sample attribute)</a>
+
+      <ul>
+        <li><a href="std_data.html#auvlib.data_tools.std_data.attitude_entry.pitch">(auvlib.data_tools.std_data.attitude_entry attribute)</a>
 </li>
+      </ul></li>
       <li><a href="csv_data.html#auvlib.data_tools.csv_data.csv_nav_entry.pitch_">pitch_ (auvlib.data_tools.csv_data.csv_nav_entry attribute)</a>
 
       <ul>
@@ -672,6 +720,8 @@
 </li>
         <li><a href="gsf_data.html#auvlib.data_tools.gsf_data.gsf_sound_speed.read_data">(auvlib.data_tools.gsf_data.gsf_sound_speed method)</a>
 </li>
+        <li><a href="std_data.html#auvlib.data_tools.std_data.attitude_entry.read_data">(auvlib.data_tools.std_data.attitude_entry method)</a>
+</li>
         <li><a href="std_data.html#auvlib.data_tools.std_data.mbes_ping.read_data">(auvlib.data_tools.std_data.mbes_ping method)</a>
 </li>
         <li><a href="std_data.html#auvlib.data_tools.std_data.nav_entry.read_data">(auvlib.data_tools.std_data.nav_entry method)</a>
@@ -694,7 +744,11 @@
       <li><a href="all_data.html#auvlib.data_tools.all_data.all_mbes_ping.reflectivities">reflectivities (auvlib.data_tools.all_data.all_mbes_ping attribute)</a>
 </li>
       <li><a href="all_data.html#auvlib.data_tools.all_data.all_nav_attitude_sample.roll">roll (auvlib.data_tools.all_data.all_nav_attitude_sample attribute)</a>
+
+      <ul>
+        <li><a href="std_data.html#auvlib.data_tools.std_data.attitude_entry.roll">(auvlib.data_tools.std_data.attitude_entry attribute)</a>
 </li>
+      </ul></li>
       <li><a href="csv_data.html#auvlib.data_tools.csv_data.csv_nav_entry.roll_">roll_ (auvlib.data_tools.csv_data.csv_nav_entry attribute)</a>
 
       <ul>
@@ -721,6 +775,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all_data.html#auvlib.data_tools.all_data.all_nav_attitude.samples">samples (auvlib.data_tools.all_data.all_nav_attitude attribute)</a>
 </li>
+      <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MapDraper.set_close_when_done">set_close_when_done() (auvlib.bathy_maps.map_draper.MapDraper method)</a>
+
+      <ul>
+        <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MeasDataDraper.set_close_when_done">(auvlib.bathy_maps.map_draper.MeasDataDraper method)</a>
+</li>
+      </ul></li>
       <li><a href="sss_gen_sim.html#auvlib.bathy_maps.sss_gen_sim.SSSGenSim.set_gen_callback">set_gen_callback() (auvlib.bathy_maps.sss_gen_sim.SSSGenSim method)</a>
 </li>
       <li><a href="sss_gen_sim.html#auvlib.bathy_maps.sss_gen_sim.SSSGenSim.set_gen_window_height">set_gen_window_height() (auvlib.bathy_maps.sss_gen_sim.SSSGenSim method)</a>
@@ -729,6 +789,12 @@
 
       <ul>
         <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MeasDataDraper.set_image_callback">(auvlib.bathy_maps.map_draper.MeasDataDraper method)</a>
+</li>
+      </ul></li>
+      <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MapDraper.set_intensity_multiplier">set_intensity_multiplier() (auvlib.bathy_maps.map_draper.MapDraper method)</a>
+
+      <ul>
+        <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MeasDataDraper.set_intensity_multiplier">(auvlib.bathy_maps.map_draper.MeasDataDraper method)</a>
 </li>
       </ul></li>
       <li><a href="patch_draper.html#auvlib.bathy_maps.patch_draper.PatchDraper.set_patch_callback">set_patch_callback() (auvlib.bathy_maps.patch_draper.PatchDraper method)</a>
@@ -773,6 +839,14 @@
         <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MeasDataDraper.set_store_map_images">(auvlib.bathy_maps.map_draper.MeasDataDraper method)</a>
 </li>
       </ul></li>
+      <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MapDraper.set_tracing_map_size">set_tracing_map_size() (auvlib.bathy_maps.map_draper.MapDraper method)</a>
+
+      <ul>
+        <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MeasDataDraper.set_tracing_map_size">(auvlib.bathy_maps.map_draper.MeasDataDraper method)</a>
+</li>
+        <li><a href="patch_draper.html#auvlib.bathy_maps.patch_draper.PatchDraper.set_tracing_map_size">(auvlib.bathy_maps.patch_draper.PatchDraper method)</a>
+</li>
+      </ul></li>
       <li><a href="map_draper.html#auvlib.bathy_maps.map_draper.MapDraper.set_vehicle_mesh">set_vehicle_mesh() (auvlib.bathy_maps.map_draper.MapDraper method)</a>
 
       <ul>
@@ -785,6 +859,10 @@
         <li><a href="sss_gen_sim.html#auvlib.bathy_maps.sss_gen_sim.SSSGenSim.set_vehicle_mesh">(auvlib.bathy_maps.sss_gen_sim.SSSGenSim method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="mesh_map.html#auvlib.bathy_maps.mesh_map.shade_image_from_normals">shade_image_from_normals() (in module auvlib.bathy_maps.mesh_map)</a>
+</li>
       <li><a href="draw_map.html#auvlib.bathy_maps.draw_map.BathyMapImage.show">show() (auvlib.bathy_maps.draw_map.BathyMapImage method)</a>
 
       <ul>
@@ -799,8 +877,6 @@
         <li><a href="sss_gen_sim.html#auvlib.bathy_maps.sss_gen_sim.SSSGenSim.show">(auvlib.bathy_maps.sss_gen_sim.SSSGenSim method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mesh_map.html#auvlib.bathy_maps.mesh_map.show_height_map">show_height_map() (in module auvlib.bathy_maps.mesh_map)</a>
 </li>
       <li><a href="mesh_map.html#auvlib.bathy_maps.mesh_map.show_mesh">show_mesh() (in module auvlib.bathy_maps.mesh_map)</a>
@@ -853,6 +929,8 @@
 </li>
       <li><a href="xtf_data.html#auvlib.data_tools.xtf_data.xtf_sss_ping.stbd">stbd (auvlib.data_tools.xtf_data.xtf_sss_ping attribute)</a>
 </li>
+      <li><a href="xyz_data.html#auvlib.data_tools.xyz_data.subsample_points">subsample_points() (in module auvlib.data_tools.xyz_data)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -884,6 +962,8 @@
 </li>
         <li><a href="gsf_data.html#auvlib.data_tools.gsf_data.gsf_sound_speed.time_stamp_">(auvlib.data_tools.gsf_data.gsf_sound_speed attribute)</a>
 </li>
+        <li><a href="std_data.html#auvlib.data_tools.std_data.attitude_entry.time_stamp_">(auvlib.data_tools.std_data.attitude_entry attribute)</a>
+</li>
         <li><a href="std_data.html#auvlib.data_tools.std_data.mbes_ping.time_stamp_">(auvlib.data_tools.std_data.mbes_ping attribute)</a>
 </li>
         <li><a href="std_data.html#auvlib.data_tools.std_data.nav_entry.time_stamp_">(auvlib.data_tools.std_data.nav_entry attribute)</a>
@@ -912,6 +992,8 @@
 </li>
         <li><a href="gsf_data.html#auvlib.data_tools.gsf_data.gsf_sound_speed.time_string_">(auvlib.data_tools.gsf_data.gsf_sound_speed attribute)</a>
 </li>
+        <li><a href="std_data.html#auvlib.data_tools.std_data.attitude_entry.time_string_">(auvlib.data_tools.std_data.attitude_entry attribute)</a>
+</li>
         <li><a href="std_data.html#auvlib.data_tools.std_data.mbes_ping.time_string_">(auvlib.data_tools.std_data.mbes_ping attribute)</a>
 </li>
         <li><a href="std_data.html#auvlib.data_tools.std_data.nav_entry.time_string_">(auvlib.data_tools.std_data.nav_entry attribute)</a>
@@ -921,11 +1003,15 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="xyz_data.html#auvlib.data_tools.xyz_data.cloud.to_matrix">to_matrix() (auvlib.data_tools.xyz_data.cloud method)</a>
+</li>
       <li><a href="snell_ray_tracing.html#auvlib.sonar_tracing.snell_ray_tracing.trace_multiple_layers">trace_multiple_layers() (in module auvlib.sonar_tracing.snell_ray_tracing)</a>
 </li>
       <li><a href="snell_ray_tracing.html#auvlib.sonar_tracing.snell_ray_tracing.trace_single_layers">trace_single_layers() (in module auvlib.sonar_tracing.snell_ray_tracing)</a>
 </li>
       <li><a href="all_data.html#auvlib.data_tools.all_data.all_mbes_ping.transducer_depth_">transducer_depth_ (auvlib.data_tools.all_data.all_mbes_ping attribute)</a>
+</li>
+      <li><a href="xyz_data.html#auvlib.data_tools.xyz_data.transform_points">transform_points() (in module auvlib.data_tools.xyz_data)</a>
 </li>
       <li><a href="gsf_data.html#auvlib.data_tools.gsf_data.gsf_mbes_ping.travel_times">travel_times (auvlib.data_tools.gsf_data.gsf_mbes_ping attribute)</a>
 </li>
@@ -991,6 +1077,10 @@
 <h2 id="Y">Y</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="std_data.html#auvlib.data_tools.std_data.attitude_entry.yaw">yaw (auvlib.data_tools.std_data.attitude_entry attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="gsf_data.html#auvlib.data_tools.gsf_data.gsf_nav_entry.yaw_">yaw_ (auvlib.data_tools.gsf_data.gsf_nav_entry attribute)</a>
 </li>
   </ul></td>
@@ -1025,26 +1115,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

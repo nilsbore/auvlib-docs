@@ -17,34 +17,46 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="patch_draper" href="patch_draper.html" />
     <link rel="prev" title="draw_map" href="draw_map.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -164,6 +176,12 @@
 <span id="mesh-map"></span><h1>mesh_map<a class="headerlink" href="#module-auvlib.bathy_maps.mesh_map" title="Permalink to this headline">¶</a></h1>
 <p>Data structure for constructing and viewing a bathymetry mesh and for draping the mesh with sidescan data</p>
 <dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.compute_normals">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">compute_normals</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]]</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[float64[m, n]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.compute_normals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute normals from the mesh, per vertex</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="auvlib.bathy_maps.mesh_map.cut_square_around_point">
 <code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">cut_square_around_point</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[float64[2, 1]], arg3: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.cut_square_around_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cut out a square from within the mesh, around point p with side length</p>
@@ -200,6 +218,12 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.mesh_and_normals_from_pings">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">mesh_and_normals_from_pings</code><span class="sig-paren">(</span><em>arg0: List[std_data::mbes_ping], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]], numpy.ndarray[float64[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.mesh_and_normals_from_pings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get vertices, faces, normals and bounds form mbes_ping::PingsT</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="auvlib.bathy_maps.mesh_map.mesh_from_cloud">
 <code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">mesh_from_cloud</code><span class="sig-paren">(</span><em>arg0: List[numpy.ndarray[float64[3, 1]]], arg1: float</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]], numpy.ndarray[float64[2, 2]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.mesh_from_cloud" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct mesh from vector&lt;Eigen::Vector3d&gt;</p>
@@ -224,9 +248,21 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.normals_at_points">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">normals_at_points</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[float64[m, n]], arg2: numpy.ndarray[float64[2, 2]], arg3: float</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[float64[m, n]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.normals_at_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the normals at a set of points on the mesh</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="auvlib.bathy_maps.mesh_map.read_ply_mesh">
 <code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">read_ply_mesh</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.read_ply_mesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read vertices and faces from a .ply file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.mesh_map.shade_image_from_normals">
+<code class="descclassname">auvlib.bathy_maps.mesh_map.</code><code class="descname">shade_image_from_normals</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[float64[2, 2]], arg2: float, arg3: numpy.ndarray[float64[3, 1]]</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[float64[m, n]]<a class="headerlink" href="#auvlib.bathy_maps.mesh_map.shade_image_from_normals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute [0, 1] shade image from normals and lighting direction</p>
 </dd></dl>
 
 <dl class="function">
@@ -266,7 +302,7 @@
         <a href="patch_draper.html" class="btn btn-neutral float-right" title="patch_draper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="draw_map.html" class="btn btn-neutral" title="draw_map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="draw_map.html" class="btn btn-neutral float-left" title="draw_map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -292,26 +328,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
