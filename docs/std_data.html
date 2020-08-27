@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,37 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'./',
-              VERSION:'0.1',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="gsf_data" href="gsf_data.html" />
@@ -60,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> auvlib
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> auvlib
           
 
           
@@ -83,6 +74,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -110,6 +102,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -148,7 +141,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="auvlib.html">auvlib</a> &raquo;</li>
         
@@ -198,9 +191,9 @@
 <dd><p>Radian pitch in ENU coordinates</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="auvlib.data_tools.std_data.attitude_entry.read_data">
-<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.attitude_entry]<a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry.read_data" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.attitude_entry]<a class="headerlink" href="#auvlib.data_tools.std_data.attitude_entry.read_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read attitude_entry::Entries from .cereal file</p>
 </dd></dl>
 
@@ -270,15 +263,15 @@
 <dd><p>Sequential ID of measurement</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="auvlib.data_tools.std_data.mbes_ping.parse_file">
-<code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.mbes_ping]<a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.parse_file" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.mbes_ping]<a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.parse_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse mbes_ping from an ASCII file exported from NaviEdit</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="auvlib.data_tools.std_data.mbes_ping.parse_folder">
-<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.mbes_ping]<a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.parse_folder" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.mbes_ping]<a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.parse_folder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse mbes_ping from folder of ASCII files exported from NaviEdit</p>
 </dd></dl>
 
@@ -294,9 +287,9 @@
 <dd><p>Position in ENU coordinates</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="auvlib.data_tools.std_data.mbes_ping.read_data">
-<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.mbes_ping]<a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.read_data" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.mbes_ping]<a class="headerlink" href="#auvlib.data_tools.std_data.mbes_ping.read_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read mbes_ping::PingsT from .cereal file</p>
 </dd></dl>
 
@@ -330,15 +323,15 @@
 <dd><p>Is first measurement in file?</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="auvlib.data_tools.std_data.nav_entry.parse_file">
-<code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.nav_entry]<a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.parse_file" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">parse_file</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.nav_entry]<a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.parse_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse nav_entry from an ASCII file exported from NaviEdit</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="auvlib.data_tools.std_data.nav_entry.parse_folder">
-<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.nav_entry]<a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.parse_folder" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">parse_folder</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.nav_entry]<a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.parse_folder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse nav_entry from folder of ASCII files exported from NaviEdit</p>
 </dd></dl>
 
@@ -348,9 +341,9 @@
 <dd><p>Position in ENU coordinates</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="auvlib.data_tools.std_data.nav_entry.read_data">
-<code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.nav_entry]<a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.read_data" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.nav_entry]<a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.read_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read nav_entry::Entries from .cereal file</p>
 </dd></dl>
 
@@ -364,6 +357,126 @@
 <dt id="auvlib.data_tools.std_data.nav_entry.time_string_">
 <code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.std_data.nav_entry.time_string_" title="Permalink to this definition">¶</a></dt>
 <dd><p>Readable date of measurement</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.data_tools.std_data.sss_ping">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.std_data.</code><code class="descname">sss_ping</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for xtf sidescan type</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.first_in_file_">
+<code class="descname">first_in_file_</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.first_in_file_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is first measurement in file?</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.heading_">
+<code class="descname">heading_</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.heading_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radian yaw in ENU coordinates</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.lat_">
+<code class="descname">lat_</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.lat_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latitude</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.long_">
+<code class="descname">long_</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.long_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Longitude</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.pitch_">
+<code class="descname">pitch_</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.pitch_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radian pitch in ENU coordinates</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.port">
+<code class="descname">port</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Port measurement</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.pos_">
+<code class="descname">pos_</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.pos_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Position in ENU coordinates</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="auvlib.data_tools.std_data.sss_ping.read_data">
+<em class="property">static </em><code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[auvlib.data_tools.std_data.sss_ping]<a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read sss_ping::PingsT from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.roll_">
+<code class="descname">roll_</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.roll_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radian roll in ENU coordinates</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.sound_vel_">
+<code class="descname">sound_vel_</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.sound_vel_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sound speed in m/s</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.stbd">
+<code class="descname">stbd</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.stbd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starboard measurement</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.time_stamp_">
+<code class="descname">time_stamp_</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.time_stamp_" title="Permalink to this definition">¶</a></dt>
+<dd><p>UNIX timestamp</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping.time_string_">
+<code class="descname">time_string_</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping.time_string_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Readable date of measurement</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.data_tools.std_data.sss_ping_side">
+<em class="property">class </em><code class="descclassname">auvlib.data_tools.std_data.</code><code class="descname">sss_ping_side</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping_side" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for one xtf sidescan side</p>
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping_side.beam_width">
+<code class="descname">beam_width</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping_side.beam_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Beam width</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping_side.pings">
+<code class="descname">pings</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping_side.pings" title="Permalink to this definition">¶</a></dt>
+<dd><p>The return intensities</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping_side.slant_range">
+<code class="descname">slant_range</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping_side.slant_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slant range</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping_side.tilt_angle">
+<code class="descname">tilt_angle</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping_side.tilt_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tilt angle</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.data_tools.std_data.sss_ping_side.time_duration">
+<code class="descname">time_duration</code><a class="headerlink" href="#auvlib.data_tools.std_data.sss_ping_side.time_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Furthest measured intensity</p>
 </dd></dl>
 
 </dd></dl>
@@ -384,6 +497,10 @@
 <li>write_data(arg0: List[auvlib.data_tools.std_data.attitude_entry], arg1: unicode) -&gt; None</li>
 </ol>
 <p>Write attitude_entry::EntriesT to .cereal file</p>
+<ol class="arabic simple" start="4">
+<li>write_data(arg0: List[auvlib.data_tools.std_data.sss_ping], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write sss_ping::PingsT to .cereal file</p>
 </dd></dl>
 
 </div>
@@ -408,11 +525,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, Nils Bore
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -423,7 +548,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

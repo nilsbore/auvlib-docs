@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>base_draper &mdash; auvlib 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="patch_draper" href="patch_draper.html" />
+    <link rel="prev" title="mesh_map" href="mesh_map.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> auvlib
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="auvlib.html">auvlib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data_tools.html">data_tools</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bathy_maps.html">bathy_maps</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="draw_map.html">draw_map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mesh_map.html">mesh_map</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">base_draper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="patch_draper.html">patch_draper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="map_draper.html">map_draper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sss_gen_sim.html">sss_gen_sim</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sonar_tracing.html">sonar_tracing</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">auvlib</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="auvlib.html">auvlib</a> &raquo;</li>
+        
+          <li><a href="bathy_maps.html">bathy_maps</a> &raquo;</li>
+        
+      <li>base_draper</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/base_draper.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="base-draper">
+<h1>base_draper<a class="headerlink" href="#base-draper" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://github.com/nilsbore/auvlib/blob/base_draper/src/pydata_tools/scripts/save_draping_result.py">save_draping_result.py</a> script from <strong>pybathy_maps</strong>
+demonstrates how to use the <strong>BaseDraper</strong> class to drape
+sidescan onto a bathymetry mesh. You can use the
+<a class="reference external" href="https://github.com/nilsbore/auvlib/blob/base_draper/src/pydata_tools/scripts/display_draping_result.py">display_draping_result.py</a> script to visualize the save data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span class="ch">#!/usr/bin/python</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">auvlib.data_tools</span> <span class="kn">import</span> <span class="n">std_data</span><span class="p">,</span> <span class="n">xtf_data</span><span class="p">,</span> <span class="n">xyz_data</span><span class="p">,</span> <span class="n">csv_data</span>
+<span class="kn">from</span> <span class="nn">auvlib.bathy_maps</span> <span class="kn">import</span> <span class="n">mesh_map</span><span class="p">,</span> <span class="n">base_draper</span><span class="p">,</span> <span class="n">draw_map</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="k">def</span> <span class="nf">run_draping</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+
+    <span class="n">mesh_res</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">mesh_res</span>
+    <span class="n">waterfall_bins</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">waterfall_bins</span>
+    <span class="n">sensor_offset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">sensor_offset</span><span class="p">)</span>
+    <span class="n">sensor_yaw</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">sensor_yaw</span>
+    
+    <span class="n">cloud</span> <span class="o">=</span> <span class="n">xyz_data</span><span class="o">.</span><span class="n">cloud</span><span class="o">.</span><span class="n">parse_file</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">xyz_file</span><span class="p">)</span>
+    <span class="n">height_map</span><span class="p">,</span> <span class="n">bounds</span> <span class="o">=</span> <span class="n">mesh_map</span><span class="o">.</span><span class="n">height_map_from_dtm_cloud</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="n">mesh_res</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;mesh.npz&quot;</span><span class="p">):</span> <span class="c1"># use cached mesh if it exists</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mesh.npz&quot;</span><span class="p">)</span>
+        <span class="n">V</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">bounds</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;bounds&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">V</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">bounds</span> <span class="o">=</span> <span class="n">mesh_map</span><span class="o">.</span><span class="n">mesh_from_dtm_cloud</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="n">mesh_res</span><span class="p">)</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="s2">&quot;mesh.npz&quot;</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">F</span><span class="o">=</span><span class="n">F</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+
+    <span class="n">xtf_pings</span> <span class="o">=</span> <span class="n">xtf_data</span><span class="o">.</span><span class="n">xtf_sss_ping</span><span class="o">.</span><span class="n">read_data</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">xtf_file</span><span class="p">)</span> <span class="c1"># read sss</span>
+    <span class="n">xtf_pings</span> <span class="o">=</span> <span class="n">xtf_data</span><span class="o">.</span><span class="n">correct_sensor_offset</span><span class="p">(</span><span class="n">xtf_pings</span><span class="p">,</span> <span class="n">sensor_offset</span><span class="p">)</span>
+
+    <span class="n">sound_speeds</span> <span class="o">=</span> <span class="n">csv_data</span><span class="o">.</span><span class="n">csv_asvp_sound_speed</span><span class="o">.</span><span class="n">parse_file</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">asvp_file</span><span class="p">)</span>
+
+    <span class="c1"># initialize a draper object that will accept sidescan pings</span>
+    <span class="n">draper</span> <span class="o">=</span> <span class="n">base_draper</span><span class="o">.</span><span class="n">BaseDraper</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">sound_speeds</span><span class="p">)</span>
+    <span class="n">draper</span><span class="o">.</span><span class="n">set_sidescan_yaw</span><span class="p">(</span><span class="n">sensor_yaw</span><span class="p">)</span>
+    <span class="n">draper</span><span class="o">.</span><span class="n">set_ray_tracing_enabled</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="c1"># images for displaying results</span>
+    <span class="n">meas_im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">waterfall_bins</span><span class="p">))</span>
+    <span class="n">model_im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">waterfall_bins</span><span class="p">))</span>
+    <span class="n">normals_im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">waterfall_bins</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+    <span class="n">cv2</span><span class="o">.</span><span class="n">namedWindow</span><span class="p">(</span><span class="s1">&#39;Model image&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">WINDOW_NORMAL</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">namedWindow</span><span class="p">(</span><span class="s1">&#39;Meas image&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">WINDOW_NORMAL</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">namedWindow</span><span class="p">(</span><span class="s1">&#39;Normal image&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">WINDOW_NORMAL</span><span class="p">)</span>
+
+    <span class="n">cv2</span><span class="o">.</span><span class="n">resizeWindow</span><span class="p">(</span><span class="s1">&#39;Model image&#39;</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">resizeWindow</span><span class="p">(</span><span class="s1">&#39;Meas image&#39;</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">resizeWindow</span><span class="p">(</span><span class="s1">&#39;Normal image&#39;</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+    <span class="c1"># create a bathymetry height map for showing vehicle position</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">draw_map</span><span class="o">.</span><span class="n">BathyMapImage</span><span class="p">(</span><span class="n">height_map</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+
+    <span class="n">draping_results</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># results list</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ping</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xtf_pings</span><span class="p">):</span>
+        <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">draper</span><span class="o">.</span><span class="n">project_ping</span><span class="p">(</span><span class="n">ping</span><span class="p">,</span> <span class="n">waterfall_bins</span><span class="p">)</span> <span class="c1"># project</span>
+        <span class="n">draping_results</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">))</span> <span class="c1"># store result</span>
+
+        <span class="c1"># the rest is basically just for visualizing the images</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">time_bin_model_intensities</span><span class="p">),</span> <span class="n">right</span><span class="o">.</span><span class="n">time_bin_model_intensities</span><span class="p">])</span>
+        <span class="n">normals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">time_bin_normals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">right</span><span class="o">.</span><span class="n">time_bin_normals</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">meas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">base_draper</span><span class="o">.</span><span class="n">compute_bin_intensities</span><span class="p">(</span><span class="n">ping</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="n">waterfall_bins</span><span class="p">)),</span>
+                                       <span class="n">base_draper</span><span class="o">.</span><span class="n">compute_bin_intensities</span><span class="p">(</span><span class="n">ping</span><span class="o">.</span><span class="n">stbd</span><span class="p">,</span> <span class="n">waterfall_bins</span><span class="p">)])</span>
+        <span class="n">meas_im</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">meas_im</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">meas_im</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">meas</span>
+        <span class="n">model_im</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">model_im</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">model_im</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="n">normals_im</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">normals_im</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+        <span class="k">if</span> <span class="n">normals</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">normals_im</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">normals</span> <span class="o">+</span> <span class="mf">1.</span><span class="p">)</span>
+            <span class="n">normals_im</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">draw_height_map</span><span class="p">(</span><span class="n">height_map</span><span class="p">)</span> <span class="c1"># draw the height map</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">draw_blue_pose</span><span class="p">(</span><span class="n">ping</span><span class="o">.</span><span class="n">pos_</span><span class="p">,</span> <span class="n">ping</span><span class="o">.</span><span class="n">heading_</span><span class="p">)</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">blip</span><span class="p">()</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;Model image&quot;</span><span class="p">,</span> <span class="n">model_im</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;Meas image&quot;</span><span class="p">,</span> <span class="n">meas_im</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;Normal image&quot;</span><span class="p">,</span> <span class="n">normals_im</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">base_draper</span><span class="o">.</span><span class="n">write_data</span><span class="p">(</span><span class="n">draping_results</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">output</span><span class="p">)</span> <span class="c1"># save results</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Process some integers.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--mesh_res&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;mesh_res&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Resolution of produced mesh&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--xyz&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;xyz_file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;KTH_Post_Deployment_AVG_WGS84UTM32N_RH200_50cm.xyz&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;XYZ bathymetry file&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--asvp&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;asvp_file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;KTH_PI_SVP_20180807_1251_573365N_0115014E_004.asvp&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;ASVP sound speed file&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--xtf&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;xtf_file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;xtf_pings.cereal&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Pre-parsed .cereal file with xtf_pings&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--bins&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;waterfall_bins&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Number of time bins to use in waterfall image&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--sensor_yaw&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;sensor_yaw&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">5.</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Yaw of the physical sidescan wrt vehicle&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--sensor_offset&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;sensor_offset&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Offset of the physical sensor wrt vehicle&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--output&#39;</span><span class="p">,</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;draping_results.cereal&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Produce output file with ping_draping_result::ResultsT&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="n">run_draping</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<span class="target" id="module-auvlib.bathy_maps.base_draper"></span><p>Functions for draping a mesh with sidescan data</p>
+<dl class="class">
+<dt id="auvlib.bathy_maps.base_draper.BaseDraper">
+<em class="property">class </em><code class="descclassname">auvlib.bathy_maps.base_draper.</code><code class="descname">BaseDraper</code><a class="headerlink" href="#auvlib.bathy_maps.base_draper.BaseDraper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for draping the whole data set of sidescan pings onto a bathymetry mesh</p>
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.BaseDraper.project_ping">
+<code class="descname">project_ping</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.BaseDraper</em>, <em>arg0: auvlib.data_tools.std_data.sss_ping</em>, <em>arg1: int</em><span class="sig-paren">)</span> &#x2192; Tuple[auvlib.bathy_maps.base_draper.ping_draping_result, auvlib.bathy_maps.base_draper.ping_draping_result]<a class="headerlink" href="#auvlib.bathy_maps.base_draper.BaseDraper.project_ping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project a ping onto the mesh and get intermediate draping results. Provide the desired downsampling of the ping as the second parameter</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.BaseDraper.set_intensity_multiplier">
+<code class="descname">set_intensity_multiplier</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.BaseDraper</em>, <em>arg0: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.BaseDraper.set_intensity_multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a value to multiply the sidescan intensity with when displaying on top of mesh</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.BaseDraper.set_ray_tracing_enabled">
+<code class="descname">set_ray_tracing_enabled</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.BaseDraper</em>, <em>arg0: bool</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.BaseDraper.set_ray_tracing_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set if ray tracing through water layers should be enabled. Takes more time but is recommended if there are large speed differences</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.BaseDraper.set_sidescan_port_stbd_offsets">
+<code class="descname">set_sidescan_port_stbd_offsets</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.BaseDraper, arg0: numpy.ndarray[float64[3, 1]], arg1: numpy.ndarray[float64[3, 1]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.BaseDraper.set_sidescan_port_stbd_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set offsets of sidescan port and stbd sides with respect to nav frame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.BaseDraper.set_sidescan_yaw">
+<code class="descname">set_sidescan_yaw</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.BaseDraper</em>, <em>arg0: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.BaseDraper.set_sidescan_yaw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set yaw correction of sidescan with respect to nav frame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.BaseDraper.set_tracing_map_size">
+<code class="descname">set_tracing_map_size</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.BaseDraper</em>, <em>arg0: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.BaseDraper.set_tracing_map_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set size of slice of map where we do ray tracing. Smaller makes it faster but you might cut off valid sidescan angles</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper">
+<em class="property">class </em><code class="descclassname">auvlib.bathy_maps.base_draper.</code><code class="descname">ViewDraper</code><a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for draping sidescan pings onto a bathymetry mesh</p>
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.add_texture_intensities">
+<code class="descname">add_texture_intensities</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper, arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[float64[m, 1]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.add_texture_intensities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the intensities of draping result hits and intensities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.get_texture_image">
+<code class="descname">get_texture_image</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[float64[m, n]]<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.get_texture_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the texture image, defined within bounds, with resolution of 1m</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.set_callback">
+<code class="descname">set_callback</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper, arg0: Callable[[auvlib.bathy_maps.base_draper.ping_draping_result, auvlib.bathy_maps.base_draper.ping_draping_result], None], arg1: int</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.set_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the function to be called when one ping has been draped</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.set_intensity_multiplier">
+<code class="descname">set_intensity_multiplier</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper</em>, <em>arg0: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.set_intensity_multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a value to multiply the sidescan intensity with when displaying on top of mesh</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.set_ray_tracing_enabled">
+<code class="descname">set_ray_tracing_enabled</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper</em>, <em>arg0: bool</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.set_ray_tracing_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set if ray tracing through water layers should be enabled. Takes more time but is recommended if there are large speed differences</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.set_rgb_texture">
+<code class="descname">set_rgb_texture</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper, arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[float64[m, n]], arg2: numpy.ndarray[float64[m, n]], arg3: numpy.ndarray[float64[2, 2]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.set_rgb_texture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a new texture to color the mesh, each RGB channel provided separately</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.set_sidescan_port_stbd_offsets">
+<code class="descname">set_sidescan_port_stbd_offsets</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper, arg0: numpy.ndarray[float64[3, 1]], arg1: numpy.ndarray[float64[3, 1]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.set_sidescan_port_stbd_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set offsets of sidescan port and stbd sides with respect to nav frame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.set_sidescan_yaw">
+<code class="descname">set_sidescan_yaw</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper</em>, <em>arg0: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.set_sidescan_yaw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set yaw correction of sidescan with respect to nav frame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.set_tracing_map_size">
+<code class="descname">set_tracing_map_size</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper</em>, <em>arg0: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.set_tracing_map_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set size of slice of map where we do ray tracing. Smaller makes it faster but you might cut off valid sidescan angles</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.set_vehicle_mesh">
+<code class="descname">set_vehicle_mesh</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper, arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[float64[m, n]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.set_vehicle_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provide the viewer with a vehicle model, purely for visualization</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="auvlib.bathy_maps.base_draper.ViewDraper.show">
+<code class="descname">show</code><span class="sig-paren">(</span><em>self: auvlib.bathy_maps.base_draper.ViewDraper</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ViewDraper.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the draping, and show the visualizer</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.base_draper.color_jet_from_mesh">
+<code class="descclassname">auvlib.bathy_maps.base_draper.</code><code class="descname">color_jet_from_mesh</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]]</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[float64[m, n]]<a class="headerlink" href="#auvlib.bathy_maps.base_draper.color_jet_from_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a jet color scheme from a vertex matrix</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.base_draper.compute_bin_intensities">
+<code class="descclassname">auvlib.bathy_maps.base_draper.</code><code class="descname">compute_bin_intensities</code><span class="sig-paren">(</span><em>arg0: auvlib.data_tools.std_data.sss_ping_side</em>, <em>arg1: int</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[float64[m, 1]]<a class="headerlink" href="#auvlib.bathy_maps.base_draper.compute_bin_intensities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dowsample the intensities of a ping to a vector of a desired length</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.base_draper.drape_viewer">
+<code class="descclassname">auvlib.bathy_maps.base_draper.</code><code class="descname">drape_viewer</code><span class="sig-paren">(</span><em>arg0: numpy.ndarray[float64[m, n]], arg1: numpy.ndarray[int32[m, n]], arg2: numpy.ndarray[float64[2, 2]], arg3: List[auvlib.data_tools.std_data.sss_ping], arg4: List[csv_data::csv_asvp_sound_speed], arg5: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#auvlib.bathy_maps.base_draper.drape_viewer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draping only for visualization, with no data being produced</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.base_draper.get_vehicle_mesh">
+<code class="descclassname">auvlib.bathy_maps.base_draper.</code><code class="descname">get_vehicle_mesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Tuple[numpy.ndarray[float64[m, n]], numpy.ndarray[int32[m, n]], numpy.ndarray[float64[m, n]]]<a class="headerlink" href="#auvlib.bathy_maps.base_draper.get_vehicle_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get vertices, faces, and colors for vehicle</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="auvlib.bathy_maps.base_draper.ping_draping_result">
+<em class="property">class </em><code class="descclassname">auvlib.bathy_maps.base_draper.</code><code class="descname">ping_draping_result</code><a class="headerlink" href="#auvlib.bathy_maps.base_draper.ping_draping_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for representing the intermediate result from draping on sidescan ping side</p>
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.base_draper.ping_draping_result.hits_inds">
+<code class="descname">hits_inds</code><a class="headerlink" href="#auvlib.bathy_maps.base_draper.ping_draping_result.hits_inds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ping time index of the hits</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.base_draper.ping_draping_result.hits_intensities">
+<code class="descname">hits_intensities</code><a class="headerlink" href="#auvlib.bathy_maps.base_draper.ping_draping_result.hits_intensities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downsampledintensities from sidescan</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.base_draper.ping_draping_result.hits_points">
+<code class="descname">hits_points</code><a class="headerlink" href="#auvlib.bathy_maps.base_draper.ping_draping_result.hits_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>3D positions of hits, see hits_inds for corresponding sidescan index</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="auvlib.bathy_maps.base_draper.ping_draping_result.read_data">
+<em class="property">static </em><code class="descname">read_data</code><span class="sig-paren">(</span><em>arg0: unicode</em><span class="sig-paren">)</span> &#x2192; List[Tuple[auvlib.bathy_maps.base_draper.ping_draping_result, auvlib.bathy_maps.base_draper.ping_draping_result]]<a class="headerlink" href="#auvlib.bathy_maps.base_draper.ping_draping_result.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read ping_draping_result::ResultsT from .cereal file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.base_draper.ping_draping_result.sensor_origin">
+<code class="descname">sensor_origin</code><a class="headerlink" href="#auvlib.bathy_maps.base_draper.ping_draping_result.sensor_origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Origin of sensor when capturing ping</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.base_draper.ping_draping_result.time_bin_model_intensities">
+<code class="descname">time_bin_model_intensities</code><a class="headerlink" href="#auvlib.bathy_maps.base_draper.ping_draping_result.time_bin_model_intensities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model intensities corresponding to the real intensities</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.base_draper.ping_draping_result.time_bin_normals">
+<code class="descname">time_bin_normals</code><a class="headerlink" href="#auvlib.bathy_maps.base_draper.ping_draping_result.time_bin_normals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normals corresponding to the ping intensities</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="auvlib.bathy_maps.base_draper.ping_draping_result.time_bin_points">
+<code class="descname">time_bin_points</code><a class="headerlink" href="#auvlib.bathy_maps.base_draper.ping_draping_result.time_bin_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Depths corresponding to the ping intensities</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="auvlib.bathy_maps.base_draper.write_data">
+<code class="descclassname">auvlib.bathy_maps.base_draper.</code><code class="descname">write_data</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#auvlib.bathy_maps.base_draper.write_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li>write_data(arg0: List[Tuple[auvlib.bathy_maps.base_draper.ping_draping_result, auvlib.bathy_maps.base_draper.ping_draping_result]], arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write ping_draping_result::ResultsT to .cereal file</p>
+<ol class="arabic simple" start="2">
+<li>write_data(arg0: auvlib.bathy_maps.base_draper.ping_draping_result, arg1: unicode) -&gt; None</li>
+</ol>
+<p>Write ping_draping_result to .cereal file</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="patch_draper.html" class="btn btn-neutral float-right" title="patch_draper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mesh_map.html" class="btn btn-neutral float-left" title="mesh_map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Nils Bore
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
